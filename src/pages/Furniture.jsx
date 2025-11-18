@@ -7,7 +7,7 @@ import logoNgang from '../assets/img/Logo/logo ngang.png'
 import logoDoc from '../assets/img/logo/logoDoc.png'
 import furnitureHero from '../assets/img/Furniture/dinner-room-japanese-style-with-long-table-wooden-chairs-room-japandi3d-rendering.jpg'
 import furniture from '../assets/img/Furniture/furniture.png'
-
+import diningTable from '../assets/img/Furniture/dining-table-setting-restaurant.jpg'
 
 
 function Furniture() {
@@ -195,7 +195,7 @@ function Furniture() {
 
         <div className="section-image-container">
           <img 
-            src="src\assets\img\Furniture\dining-table-setting-restaurant.jpg" 
+            src={diningTable}
             alt="Restaurant & Hotel Setup" 
             className="section-image"
           />
