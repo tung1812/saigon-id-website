@@ -364,7 +364,7 @@ function Home() {
             <div className="contact-info-column">
               <div className="contact-info-item">
                 <span className="contact-label">Chi nhánh Đà Lạt</span>
-                <p className="contact-text">256 Xô Viết Ngh��� Tĩnh,<br />Phường Lang Biang - Đà Lạt, tỉnh Lâm Đồng</p>
+                <p className="contact-text">256 Xô Viết Nghệ Tĩnh,<br />Phường Lang Biang - Đà Lạt, tỉnh Lâm Đồng</p>
               </div>
               <div className="contact-info-item">
                 <span className="contact-label">Số điện thoại</span>
