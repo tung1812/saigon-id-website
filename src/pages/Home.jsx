@@ -3,12 +3,37 @@ import { Link } from 'react-router-dom'
 import '../App.css'
 import BackToTopButton from '../components/BackToTopButton'
 
+import logoNgang from '../assets/img/Logo/logo ngang.png'
+import logoDoc from '../assets/img/logo/logoDoc.png'
+import hero1 from '../assets/img/Home/Hero/1.jpeg'
+import hero2 from '../assets/img/Home/Hero/2.jpeg'
+import hero3 from '../assets/img/Home/Hero/3.jpeg'
+import hero4 from '../assets/img/Home/Hero/4.jpg'
+import hero5 from '../assets/img/Home/Hero/5.jpg'
+import nhamaygo from '../assets/img/Home/nha may go.jpg'
+import thietke from '../assets/img/Home/thiet ke.jpg'
+import thicong from '../assets/img/Home/thi cong.jpg'
+import nhahang from '../assets/img/Home/nha hang.jpg'
+import home1 from '../assets/img/Home/1.png'
+import home2 from '../assets/img/Home/2.png'
+import home3 from '../assets/img/Home/3.png'
+import home4 from '../assets/img/Home/4.png'
+import home5 from '../assets/img/Home/5.png'
+import chebiengo from '../assets/img/Home/che bien go.jpg'
+
+import ancuong from '../assets/img/Logo/an cuong.png'
+import dupont from '../assets/img/Logo/du pont.png'
+import hafele from '../assets/img/Logo/hafele.png'
+import oacacia from '../assets/img/Logo/oacacia.png'
+import rubio from '../assets/img/Logo/rubio.png'
+
 function Home() {
   const heroImages = [
-    'src/assets/img/Home/Hero/1.jpeg',
-    'src/assets/img/Home/Hero/2.jpeg',
-    'src/assets/img/Home/Hero/3.jpeg',
-    'src/assets/img/Home/Hero/4.jpg',
+    hero1,
+    hero2,
+    hero3,
+    hero4,
+    hero5
   ]
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -46,7 +71,7 @@ function Home() {
         {/* Navigation */}
         <nav className="top-bar">
           <img 
-            src="src\assets\img\Logo\logo ngang.png" 
+            src={logoNgang}
             alt="SAIGON ID Logo" 
             className="logo"
           />
@@ -162,7 +187,7 @@ function Home() {
             
             <div className="factory-image-wrapper">
               <img 
-                src="src\assets\img\Home\nha may go.jpg" 
+                src={nhamaygo}
                 alt="Nhà máy sản xuất"
                 className="factory-image"
               />
@@ -178,34 +203,34 @@ function Home() {
         <div className="clients-carousel-wrapper">
           <div className="clients-carousel">
             <div className="client-card">
-              <img src="src\assets\img\Logo\oacacia.png" alt="Client" />
+              <img src={oacacia} alt="Client" />
             </div>
             <div className="client-card">
-              <img src="src\assets\img\Logo\rubio.png" alt="Client" />
+              <img src={rubio} alt="Client" />
             </div>
             <div className="client-card">
-              <img src="src\assets\img\Logo\hafele.png" alt="Client" />
+              <img src={hafele} alt="Client" />
             </div>
             <div className="client-card">
-              <img src="src\assets\img\Logo\du pont.png" alt="Hafele" />
+              <img src={dupont} alt="Hafele" />
             </div>
             <div className="client-card">
-              <img src="src\assets\img\Logo\an cuong.png" alt="DuPont" />
+              <img src={ancuong} alt="DuPont" />
             </div>
             <div className="client-card">
-              <img src="src\assets\img\Logo\oacacia.png" alt="Client" />
+              <img src={oacacia} alt="Client" />
             </div>
             <div className="client-card">
-              <img src="src\assets\img\Logo\rubio.png" alt="Client" />
+              <img src={rubio} alt="Client" />
             </div>
             <div className="client-card">
-              <img src="src\assets\img\Logo\hafele.png" alt="Client" />
+              <img src={hafele} alt="Client" />
             </div>
             <div className="client-card">
-              <img src="src\assets\img\Logo\du pont.png" alt="Hafele" />
+              <img src={dupont} alt="Hafele" />
             </div>
             <div className="client-card">
-              <img src="src\assets\img\Logo\an cuong.png" alt="DuPont" />
+              <img src={ancuong} alt="DuPont" />
             </div>
           </div>
         </div>
@@ -224,7 +249,7 @@ function Home() {
           <div className="service-card">
             <div className="service-order">01</div>
             <div className="service-image-wrapper">
-              <img src="src\assets\img\Home\thiet ke.jpg" alt="Thiết kế nội thất" />
+              <img src={thietke} alt="Thiết kế nội thất" />
             </div>
             <h3 className="service-title">Thiết kế<br />nội thất</h3>
           </div>
@@ -232,7 +257,7 @@ function Home() {
           <div className="service-card">
             <div className="service-order">02</div>
             <div className="service-image-wrapper">
-              <img src="src\assets\img\Home\thi cong.jpg" alt="Sản xu���t & thi công" />
+              <img src={thicong} alt="Sản xu���t & thi công" />
             </div>
             <h3 className="service-title">Sản xuất &<br />thi công nội thất</h3>
           </div>
@@ -240,7 +265,7 @@ function Home() {
           <div className="service-card">
             <div className="service-order">03</div>
             <div className="service-image-wrapper">
-              <img src="src\assets\img\Home\che bien go.jpg" alt="Nội thất rời" />
+              <img src={chebiengo} alt="Nội thất rời" />
             </div>
             <h3 className="service-title">Cung cấp<br />nội thất rời</h3>
           </div>
@@ -248,7 +273,7 @@ function Home() {
           <div className="service-card">
             <div className="service-order">04</div>
             <div className="service-image-wrapper">
-              <img src="src\assets\img\Home\nha hang.jpg" alt="Setup nhà hàng" />
+              <img src={nhahang} alt="Setup nhà hàng" />
             </div>
             <h3 className="service-title">Set up<br />nhà hàng - khách sạn</h3>
           </div>
@@ -267,35 +292,35 @@ function Home() {
         <div className="projects-grid">
           <div className="project-card project-large-1">
             <div className="project-card-wrapper">
-              <img src="src\assets\img\Home\2.png" alt="Office Eximbank" className="project-image" />
+              <img src={home2} alt="Office Eximbank" className="project-image" />
               <h3 className="project-title">OFFICE EXIMBANK - DISTRICT 1</h3>
             </div>
           </div>
 
           <div className="project-card project-small-1">
             <div className="project-card-wrapper">
-              <img src="src\assets\img\Home\1.png" alt="Office KSF Bank" className="project-image" />
+              <img src={home1} alt="Office KSF Bank" className="project-image" />
               <h3 className="project-title">OFFICE KSF BANK - DISTRICT 2</h3>
             </div>
           </div>
 
           <div className="project-card project-large-2">
             <div className="project-card-wrapper">
-              <img src="src\assets\img\Home\3.png" alt="Penthouse" className="project-image" />
+              <img src={home3} alt="Penthouse" className="project-image" />
               <h3 className="project-title">PENTHOUSE MR QUANG MUSICIAN</h3>
             </div>
           </div>
 
           <div className="project-card project-small-2">
             <div className="project-card-wrapper">
-              <img src="src\assets\img\Home\5.png" alt="Townhouse" className="project-image" />
+              <img src={home5} alt="Townhouse" className="project-image" />
               <h3 className="project-title">TOWNHOUSE - LONG AN PROVINCE</h3>
             </div>
           </div>
 
           <div className="project-card project-large-3">
             <div className="project-card-wrapper">
-              <img src="src\assets\img\Home\4.png" alt="Phuc Long" className="project-image" />
+              <img src={home4} alt="Phuc Long" className="project-image" />
               <h3 className="project-title">PHÚC LONG TEA & COFFEE</h3>
             </div>
           </div>
@@ -308,7 +333,7 @@ function Home() {
         
         <div className="contact-content">
           <div className="contact-logo">
-            <img src="src\assets\img\Logo\logo dọc.png" alt="SAIGON ID" />
+            <img src={logoDoc} alt="SAIGON ID" />
           </div>
 
           <div className="newsletter-form">

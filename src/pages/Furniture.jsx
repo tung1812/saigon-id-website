@@ -3,39 +3,20 @@ import { useState, useRef, useEffect } from 'react'
 import './Furniture.css'
 import BackToTopButton from '../components/BackToTopButton'
 
+import logoNgang from '../assets/img/Logo/logo ngang.png'
+import logoDoc from '../assets/img/logo/logoDoc.png'
+import furnitureHero from '../assets/img/Furniture/dinner-room-japanese-style-with-long-table-wooden-chairs-room-japandi3d-rendering.jpg'
+import furniture from '../assets/img/Furniture/furniture.png'
+
+
+
 function Furniture() {
-  const furnitureImages = [
-    'src/assets/img/Furniture/Chair/z7104852169928_9cbd62a83c9d08e3bd43c5c2dd959e5a.jpg',
-    'src/assets/img/Furniture/Chair/z7104852170758_b400091b5fc533372ec08b1693472edf.jpg',
-    'src/assets/img/Furniture/Chair/z7104852174224_a8fe336913961b0147d5618c8ce33eb3.jpg',
-    'src/assets/img/Furniture/Chair/z7104852181745_b5c434115d1a530673ebbd161c4b8452.jpg',
-    'src/assets/img/Furniture/Chair/z7104852184584_6b0891e40435f85aabd5cfa1b6d36f82.jpg',
-    'src/assets/img/Furniture/Chair/z7104852195302_66a1325a88cc352ce30a4f953a09d255.jpg',
-    'src/assets/img/Furniture/Chair/z7104852201938_1fcdead66b5a55198e202f218de071fe.jpg',
-    'src/assets/img/Furniture/Chair/z7104852202249_6e1d9c5402d5a1a59185dbbb82d4338e.jpg',
-    'src/assets/img/Furniture/Chair/z7104852208116_e2486a772ad6f08205e579d9101f48dc.jpg',
-    'src/assets/img/Furniture/Chair/z7104852219102_4d9cf3183440c42fcbccfe7563e2eecb.jpg',
-    'src/assets/img/Furniture/Chair/z7104852224641_8c2ffbc207aaae985c92ce8f9245e088.jpg',
-    'src/assets/img/Furniture/Chair/z7104852230997_4756d34559b4ba01cf2b79b1912319f3.jpg',
-    'src/assets/img/Furniture/Chair/z7104852235886_fe308eeacecc252b154d0ec521828c17.jpg',
-    'src/assets/img/Furniture/Chair/z7104852239721_f5c2e9a206bcd24c311d6ed388763b10.jpg',
-    'src/assets/img/Furniture/Chair/z7104852248049_37df1606b13c42ecfa6d219dce304307.jpg',
-    'src/assets/img/Furniture/Chair/z7104852252929_15fb8614832fec5a886002bdea32ff4a.jpg',
-    'src/assets/img/Furniture/Chair/z7104852261215_d8aa987d72edd08cad37193b1c632df1.jpg',
-    'src/assets/img/Furniture/Chair/z7104852262652_e2ba581cabf71ac9ddc2b422250c79b6.jpg',
-    'src/assets/img/Furniture/Chair/z7104852272699_e4a1ce3a69369f6af1aec58abb955803.jpg',
-    'src/assets/img/Furniture/Chair/z7104862231237_5dc8fd570d139927d67a116a2d5ca215.jpg',
-    'src/assets/img/Furniture/Chair/z7104862235585_2c426aa172e7be64aadc6894ae707901.jpg',
-    'src/assets/img/Furniture/Chair/z7104862240727_1c58df710b348f826bfe4987d6f290ab.jpg',
-    'src/assets/img/Furniture/Chair/z7104862242134_d585e46b4c7c6fe0bad7edb71ef8f92c.jpg',
-    'src/assets/img/Furniture/Chair/z7104862248486_b2b9c10a6750431825deed54f3f7b2c9.jpg',
-    'src/assets/img/Furniture/Chair/z7104862259958_2aba5ec688fd786776b4e4f5be0a339f.jpg',
-    'src/assets/img/Furniture/Chair/z7104862267314_00ad5d21e61e2977c8dbd3228d6e42b1.jpg',
-    'src/assets/img/Furniture/Chair/z7104862269123_27d8ef3888b398039ffa60eaf0551e52.jpg',
-    'src/assets/img/Furniture/Chair/z7104862270877_a91f03d7fce98e30ee51005ddd57b950.jpg',
-    'src/assets/img/Furniture/Chair/z7104862278728_386738acbf27602b0bf25326e4295737.jpg',
-    'src/assets/img/Furniture/Chair/z7104862286985_f7611ceddf303aade31341697ce15428.jpg',
-  ]
+  const furnitureImages = Object.values(
+    import.meta.glob('../assets/img/Furniture/Chair/*.jpg', {
+      eager: true,
+      as: 'url',
+    })
+  )
 
   const sliderRef = useRef(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
@@ -88,7 +69,7 @@ function Furniture() {
         
         <Link to="/">
           <img 
-            src="src\assets\img\Logo\logo ngang.png" 
+            src={logoNgang}
             alt="SAIGON ID Logo" 
             className="logo"
           />
@@ -124,7 +105,7 @@ function Furniture() {
       <section className="furniture-hero-section">
         <div className="hero-image-container">
           <img 
-            src="src\assets\img\Furniture\dinner-room-japanese-style-with-long-table-wooden-chairs-room-japandi3d-rendering.jpg" 
+            src={furnitureHero}
             alt="Furniture Manufacturing" 
             className="hero-furniture-image"
           />
@@ -194,7 +175,7 @@ function Furniture() {
 
         <div className="section-image-container">
           <img 
-            src="src\assets\img\Furniture\furniture.png" 
+            src={furniture}
             alt="Interior Design & Construction" 
             className="section-image"
           />
@@ -252,7 +233,7 @@ function Furniture() {
         
         <div className="contact-content">
           <div className="contact-logo">
-            <img src="src\assets\img\Logo\logo dọc.png" alt="SAIGON ID" />
+            <img src={logoDoc} alt="SAIGON ID" />
           </div>
 
           <div className="newsletter-form">

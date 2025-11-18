@@ -2,6 +2,19 @@ import { Link } from 'react-router-dom'
 import './Infrastructure.css'
 import BackToTopButton from '../components/BackToTopButton'
 
+import logoNgang from '../assets/img/Logo/logo ngang.png'
+import logoDoc from '../assets/img/logo/logoDoc.png'
+import infraHero from '../assets/img/Infrastructure/BeautyPlus-Image-Enhancer-1759054072094.jpg'
+import infra1 from '../assets/img/Infrastructure/z7058113891635_4c8a1b2206bca3185b6d50fd4944d8b2.jpg'
+import infra2 from '../assets/img/Infrastructure/z7058113890868_3d1a710ecc30bd814d7993c3b7f04563.jpg'
+import infra3 from '../assets/img/Infrastructure/z7058113902884_968f7d515fc5b43f5abe4b14a71f38f4.jpg'
+import infra4 from '../assets/img/Infrastructure/z7058113910360_1eda0fde138ed8f2943e4e0c0e48c82d.jpg'
+import infra5 from '../assets/img/Infrastructure/z7058113911974_0d0bb63019f3f72924f52b3923292de1.jpg'
+import paint1 from '../assets/img/Infrastructure/son 1.png'
+import paint2 from '../assets/img/Infrastructure/son 2.png'
+import paint3 from '../assets/img/Infrastructure/son 3.jpg'
+import paint4 from '../assets/img/Infrastructure/son 4.jpg'
+
 function Infrastructure() {
   return (
     <div className="infrastructure-page">
@@ -23,7 +36,7 @@ function Infrastructure() {
         
         <Link to="/">
           <img 
-            src="src\assets\img\Logo\logo ngang.png" 
+            src={logoNgang}
             alt="SAIGON ID Logo" 
             className="logo"
           />
@@ -59,7 +72,7 @@ function Infrastructure() {
       <section className="factory-production-section">
         <div className="factory-hero-image">
           <img 
-            src="src\assets\img\Infrastructure\BeautyPlus-Image-Enhancer-1759054072094.jpg" 
+            src={infraHero}
             alt="Factory Production" 
           />
         </div>
@@ -80,21 +93,21 @@ số lượng đơn hàng của khách hàng.
         <div className="factory-images-grid">
           <div className="factory-row-3">
             <div className="factory-image-box">
-              <img src="src\assets\img\Infrastructure\z7058113891635_4c8a1b2206bca3185b6d50fd4944d8b2.jpg" alt="Factory" />
+              <img src={infra1} alt="Factory" />
             </div>
             <div className="factory-image-box">
-              <img src="src\assets\img\Infrastructure\z7058113890868_3d1a710ecc30bd814d7993c3b7f04563.jpg" alt="Factory" />
+              <img src={infra2} alt="Factory" />
             </div>
             <div className="factory-image-box">
-              <img src="src\assets\img\Infrastructure\z7058113902884_968f7d515fc5b43f5abe4b14a71f38f4.jpg" alt="Factory" />
+              <img src={infra3} alt="Factory" />
             </div>
           </div>
           <div className="factory-row-2">
             <div className="factory-image-box-wide">
-              <img src="src\assets\img\Infrastructure\z7058113910360_1eda0fde138ed8f2943e4e0c0e48c82d.jpg" alt="Factory" />
+              <img src={infra4} alt="Factory" />
             </div>
             <div className="factory-image-box-wide">
-              <img src="src\assets\img\Infrastructure\z7058113911974_0d0bb63019f3f72924f52b3923292de1.jpg" alt="Factory" />
+              <img src={infra5} alt="Factory" />
             </div>
           </div>
         </div>
@@ -111,18 +124,18 @@ số lượng đơn hàng của khách hàng.
         <div className="painting-images-grid">
           <div className="painting-row">
             <div className="painting-image-box">
-              <img src="src\assets\img\Infrastructure\son 1.png" alt="Painting Area" />
+              <img src={paint1} alt="Painting Area" />
             </div>
             <div className="painting-image-box">
-              <img src="src\assets\img\Infrastructure\son 2.png" alt="Painting Area" />
+              <img src={paint2} alt="Painting Area" />
             </div>
           </div>
           <div className="painting-row">
             <div className="painting-image-box">
-              <img src="src\assets\img\Infrastructure\son 3.jpg" alt="Painting Area" />
+              <img src={paint3} alt="Painting Area" />
             </div>
             <div className="painting-image-box">
-              <img src="src\assets\img\Infrastructure\son 4.jpg" alt="Painting Area" />
+              <img src={paint4} alt="Painting Area" />
             </div>
           </div>
         </div>
@@ -159,7 +172,7 @@ số lượng đơn hàng của khách hàng.
         
         <div className="contact-content">
           <div className="contact-logo">
-            <img src="src\assets\img\Logo\logo dọc.png" alt="SAIGON ID" />
+            <img src={logoDoc} alt="SAIGON ID" />
           </div>
 
           <div className="newsletter-form">

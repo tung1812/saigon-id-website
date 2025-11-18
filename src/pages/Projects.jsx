@@ -2,6 +2,18 @@ import { Link } from 'react-router-dom'
 import './Projects.css'
 import BackToTopButton from '../components/BackToTopButton'
 
+import logoNgang from '../assets/img/Logo/logo ngang.png'
+import logoDoc from '../assets/img/logo/logoDoc.png'
+import balisaHotelImg from '../assets/img/Project/Hotel/Hotel.png'
+import penthouseMrQuangImg from '../assets/img/Project/Penthouse/penthouseMasteri (1).png'
+import estellaThumb from '../assets/img/Project/estella/estella (5).jpg'
+import apacThumb from '../assets/img/Project/apac/apac (4).jpg'
+import kienLongThumb from '../assets/img/Project/kien long/Bank (5).jpg'
+import pizzaThumb from '../assets/img/Project/pizza/4p (2).jpg'
+import coffeeThumb from '../assets/img/Project/coffee/coffeeBmt (2).jpg'
+import penthouseMasteriThumb from '../assets/img/Project/Penthouse/penthouseMasteri (2).png'
+import phucLongThumb from '../assets/img/Project/phuclong/fucklong (1).png'
+
 function Projects() {
   return (
     <div className="projects-page">
@@ -20,7 +32,7 @@ function Projects() {
         
         <Link to="/">
           <img 
-            src="src\assets\img\Logo\logo ngang.png" 
+            src={logoNgang}
             alt="SAIGON ID Logo" 
             className="logo"
           />
@@ -60,7 +72,7 @@ function Projects() {
           <div className="projects-row">
             <Link to="/projects/balisa-hotel" className="project-card">
               <img
-                src="src\assets\img\Project\Hotel\Hotel.png"
+                src={balisaHotelImg}
                 alt="Balisa Hotel"
                 className="project-image"
               />
@@ -69,7 +81,7 @@ function Projects() {
 
             <Link to="/projects/penthouse-mr-quang" className="project-card">
               <img
-                src="src\assets\img\Project\Penthouse\penthouseMasteri (1).png"
+                src={penthouseMrQuangImg}
                 alt="Penthouse Mr Quang Musician"
                 className="project-image"
               />
@@ -78,7 +90,7 @@ function Projects() {
 
             <Link to="/projects/chung-cu-estalla" className="project-card">
               <img
-                src="src\assets\img\Project\estella\estella (5).jpg"
+                src={estellaThumb}
                 alt="Chung cư Estalla"
                 className="project-image"
               />
@@ -90,7 +102,7 @@ function Projects() {
           <div className="projects-row">
             <Link to="/projects/apec-mandala" className="project-card">
               <img
-                src="src\assets\img\Project\apac\apac (4).jpg"
+                src={apacThumb}
                 alt="Apec Mandala Charm Bay"
                 className="project-image"
               />
@@ -99,7 +111,7 @@ function Projects() {
 
             <Link to="/projects/kien-long-bank" className="project-card">
               <img
-                src="src\assets\img\Project\kien long\Bank (5).jpg"
+                src={kienLongThumb}
                 alt="Kiên Long Bank"
                 className="project-image"
               />
@@ -108,7 +120,7 @@ function Projects() {
 
             <Link to="/projects/pizza-4ps" className="project-card">
               <img
-                src="src\assets\img\Project\pizza\4p (2).jpg"
+                src={pizzaThumb}
                 alt="Pizza 4P's"
                 className="project-image"
               />
@@ -120,7 +132,7 @@ function Projects() {
           <div className="projects-row">
             <Link to="/projects/coffee-shop" className="project-card">
               <img
-                src="src\assets\img\Project\coffee\coffeeBmt (2).jpg"
+                src={coffeeThumb}
                 alt="Coffee Shop"
                 className="project-image"
               />
@@ -129,7 +141,7 @@ function Projects() {
 
             <Link to="/projects/penthouse-masteri" className="project-card">
               <img
-                src="src\assets\img\Project\Penthouse\penthouseMasteri (2).png"
+                src={penthouseMasteriThumb}
                 alt="Penthouse Masteri"
                 className="project-image"
               />
@@ -138,7 +150,7 @@ function Projects() {
 
             <Link to="/projects/phuc-long-coffee" className="project-card">
               <img
-                src="src\assets\img\Project\phuclong\fucklong (1).png"
+                src={phucLongThumb}
                 alt="Phúc Long Coffee"
                 className="project-image"
               />
@@ -154,7 +166,7 @@ function Projects() {
         
         <div className="contact-content">
           <div className="contact-logo">
-            <img src="src\assets\img\Logo\logo dọc.png" alt="SAIGON ID" />
+            <img src={logoDoc} alt="SAIGON ID" />
           </div>
 
           <div className="newsletter-form">

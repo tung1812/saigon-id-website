@@ -2,6 +2,11 @@ import { Link } from 'react-router-dom'
 import './About.css'
 import BackToTopButton from '../components/BackToTopButton'
 
+import logoNgang from '../assets/img/Logo/logo ngang.png'
+import logoDoc from '../assets/img/logo/logoDoc.png'
+import about from '../assets/img/About/about us.jpg'
+import nhamaygo from '../assets/img/About/nha may go.jpg'
+
 function About() {
   return (
     <div className="about-page">
@@ -16,7 +21,7 @@ function About() {
         
         <Link to="/">
           <img 
-            src="src\assets\img\Logo\logo ngang.png" 
+            src={logoNgang}
             alt="SAIGON ID Logo" 
             className="logo"
           />
@@ -62,7 +67,7 @@ function About() {
           
           <div className="about-hero-image-wrapper">
             <img 
-              src="src\assets\img\About\about us.jpg" 
+              src={about}
               alt="SAIGON ID Office"
               className="about-hero-image"
             />
@@ -131,7 +136,7 @@ function About() {
         <div className="factory-content">
           <div className="factory-image-container">
             <img 
-              src="src\assets\img\About\nha may go.jpg" 
+              src={nhamaygo}
               alt="Factory Production"
               className="factory-main-image"
             />
@@ -154,7 +159,7 @@ function About() {
         
         <div className="contact-content">
           <div className="contact-logo">
-            <img src="src\assets\img\Logo\logo dọc.png" alt="SAIGON ID" />
+            <img src={logoDoc} alt="SAIGON ID" />
           </div>
 
           <div className="newsletter-form">
