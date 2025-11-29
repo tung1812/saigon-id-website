@@ -264,41 +264,38 @@
 /* ===== Stats Grid ===== */
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(250px, 306px));
-  gap: clamp(1.5rem, 2vw, 30px);
+  /* 3 columns; each must be >= 320px to preserve square + min-height */
+  grid-template-columns: repeat(3, minmax(320px, 1fr));
+
+  /* same visual spacing, but use gap shorthand */
+  gap: 20px 24px;
+
+  /* margins */
   margin: clamp(2rem, 4vw, 4rem) 0 clamp(3rem, 6vw, 6rem);
   max-width: 966px;
   margin-left: auto;
   margin-right: 0;
   padding-right: clamp(1.5rem, 3vw, 2rem);
+
+  /* make sure items start at the top, no stretched packing */
+  align-content: start;
+  justify-content: end; /* aligns the 3-col grid to the right inside max-width */
 }
 
-.stats-grid .stat-card:nth-child(1) {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.stats-grid .stat-card:nth-child(2) {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.stats-grid .stat-card:nth-child(3) {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.stats-grid .stat-card:nth-child(4) {
-  grid-column: 3;
-  grid-row: 2;
-}
+.stats-grid .stat-card:nth-child(1) { grid-column: 1; grid-row: 1; }
+.stats-grid .stat-card:nth-child(2) { grid-column: 2; grid-row: 1; }
+.stats-grid .stat-card:nth-child(3) { grid-column: 2; grid-row: 2; }
+.stats-grid .stat-card:nth-child(4) { grid-column: 3; grid-row: 2; }
 
 .stat-card {
+  aspect-ratio: 1 / 1;                 /* square by width */
+  min-height: 320px;                    /* never shorter than 320px */
+  margin: 0;
   position: relative;
+  overflow: hidden;
   padding: 20px;
   border-radius: 20px;
   border: 1px solid var(--color-gray-border);
-  min-height: 320px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -582,102 +579,85 @@
 }
 
 .projects-grid {
+  --gutter: clamp(16px, 3vw, 40px);
+  --gap: clamp(16px, 2vw, 24px);
+
+  box-sizing: border-box;
+  margin-inline: calc(50% - 50vw);
+  width: 100vw;
+  padding-inline: var(--gutter);
+
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: clamp(1.5rem, 2vw, 2rem);
-  max-width: 1408px;
-  margin: 0 auto;
+  grid-template-columns: 1fr;
+  row-gap: var(--gap);
 }
 
-.project-card {
-  position: relative;
-  transition: transform 0.3s;
-}
+/* Card base */
+.project-card{ position: relative; transition: transform .25s; }
+.project-card:hover{ transform: translateY(-6px); }
 
-.project-card:hover {
-  transform: translateY(-8px);
-}
+.project-card.large { width: min(800px, calc(100vw - 2*var(--gutter))); justify-self: start; } 
+.project-card.small { width: min(500px, calc(100vw - 2*var(--gutter))); justify-self: start; }
 
 .project-card-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(1rem, 2vw, 28px);
+  box-sizing: border-box;      /* <<< prevents padding from exceeding parent width */
+  position: relative;
+  width: 100%;
+  overflow: hidden;
   padding: 12px;
   border-radius: 18px;
-  background: #1A1A1A;
+  background: #1A1A1A;         /* keep requested fill */
   backdrop-filter: blur(6px);
-  height: 100%;
 }
 
-.project-large-1 .project-card-wrapper,
-.project-large-2 .project-card-wrapper,
-.project-large-3 .project-card-wrapper {
-  gap: clamp(1.2rem, 2.5vw, 32px);
-}
 
-.project-small-1 .project-card-wrapper,
-.project-small-2 .project-card-wrapper {
-  gap: clamp(0.8rem, 1.5vw, 20px);
-}
 
-.project-large-1 {
-  grid-column: span 7;
-  min-height: clamp(300px, 40vw, 450px);
-}
-
-.project-small-1 {
-  grid-column: span 5;
-  min-height: clamp(200px, 25vw, 280px);
-}
-
-.project-large-2 {
-  grid-column: 3 / span 8;
-  grid-row: 2;
-  min-height: clamp(300px, 40vw, 450px);
-  justify-self: center;
-}
-
-.project-small-2 {
-  grid-column: span 5;
-  grid-row: 3;
-  min-height: clamp(200px, 25vw, 280px);
-}
-
-.project-large-3 {
-  grid-column: 6 / span 7;
-  grid-row: 3;
-  min-height: clamp(300px, 40vw, 450px);
-}
-
-.project-image {
+/* Image fills the wrapper; title overlays the same way for all sizes */
+.project-card-wrapper > img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  border-radius: 12px;
   display: block;
-  flex-shrink: 0;
+  border-radius: 12px; 
 }
 
-.project-large-1 .project-image,
-.project-large-2 .project-image,
-.project-large-3 .project-image {
-  height: clamp(200px, 30vw, 320px);
+/* sizes */
+.project-card.large .project-card-wrapper{
+  aspect-ratio: 4 / 3;              /* → ~800×600 */
+  min-height: 600px;
+}
+.project-card.small .project-card-wrapper{
+  aspect-ratio: 10 / 9;             /* → ~500×450 */
+  min-height: 450px;
 }
 
-.project-small-1 .project-image,
-.project-small-2 .project-image {
-  height: clamp(120px, 18vw, 180px);
-}
-
-.project-title {
-  color: var(--color-white);
-  font-size: clamp(1rem, 1.5vw, 24px);
-  font-weight: 600;
-  line-height: 1.33;
-  letter-spacing: -0.24px;
+/* overlay title — same for all */
+.project-title{
+  position: absolute;
+  left: 16px;
+  bottom: 12px;
   margin: 0;
-  padding: 0 clamp(0.5rem, 1vw, 1rem);
+  padding: .4rem .7rem;
+  font-size: clamp(14px, 1.2vw, 16px);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(0,0,0,.55);
+  border-radius: 10px;
 }
+
+
+/* row 1: large left edge, small right edge */
+.project-card.pos-a { grid-column: 1; justify-self: start; }
+.project-card.pos-b { grid-column: 2; justify-self: end; }
+
+/* Row 2: single large centered */
+.project-card.pos-c { grid-column: 1 / -1; justify-self: center; }
+
+/* Row 3: small left edge, large right edge */
+.project-card.pos-d { grid-column: 1; justify-self: start; }
+.project-card.pos-e { grid-column: 2; justify-self: end; }
+
 
 /* ===== Contact Section ===== */
 .contact-section {
@@ -878,11 +858,12 @@
 }
 
 /* ===== Responsive Breakpoints ===== */
+
+
 @media (max-width: 1200px) {
   .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    margin-left: auto;
-    margin-right: auto;
+    grid-template-columns: repeat(2, minmax(320px, 1fr));
+    justify-content: end;
   }
 
   .stats-grid .stat-card:nth-child(1),
@@ -950,7 +931,9 @@
   }
 
   .stats-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(320px, 1fr); /* single column */
+    justify-content: stretch;
+    padding-right: 0;
   }
 
   .stats-grid .stat-card:nth-child(1),

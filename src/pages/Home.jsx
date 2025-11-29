@@ -27,6 +27,18 @@ import hafele from '../assets/img/Logo/hafele.png'
 import oacacia from '../assets/img/Logo/oacacia.png'
 import rubio from '../assets/img/Logo/rubio.png'
 
+import experience from "../assets/img/Home/icons/experience.png";
+import projects   from "../assets/img/Home/icons/project.png";
+import factory    from "../assets/img/Home/icons/factory.png";
+import site       from "../assets/img/Home/icons/site.png";
+
+const STATS = [
+  { src: experience, number: "10+",  label: "Năm kinh nghiệm" },
+  { src: projects,   number: "120+", label: "Dự án thành công" },
+  { src: factory,    number: "49+",  label: "Nhân công tại xưởng" },
+  { src: site,       number: "60+",  label: "Nhân công tại công trình" },
+];
+
 function Home() {
   const heroImages = [
     hero1,
@@ -120,7 +132,7 @@ function Home() {
 
           <p className="about-description">
             CÔNG TY TNHH XÂY DỰNG VÀ KIẾN TRÚC SAIGON ID ( Viết tắt SID).
-            'ID' là viết tắt của Identity - bản sắc, 'ID' - Ý tưởng trong thiết kế, đồng thời cũng là Interior & Design ( thiết kế nội thất). Chúng tôi tin rằng mỗi ngôi nhà, mỗi tác phẩm đều xứng đáng có một 'ID' riêng - phản ánh đúng gu thẩm m���, lối sống và giá trị riêng. Bên cạnh thiết kế chúng tôi còn thi công trang trí nội - ngoại thất, sản xuất đồ gỗ.
+            'ID' là viết tắt của Identity - bản sắc, 'ID' - Ý tưởng trong thiết kế, đồng thời cũng là Interior & Design ( thiết kế nội thất). Chúng tôi tin rằng mỗi ngôi nhà, mỗi tác phẩm đều xứng đáng có một 'ID' riêng - phản ánh đúng gu thẩm mỹ, lối sống và giá trị riêng. Bên cạnh thiết kế chúng tôi còn thi công trang trí nội - ngoại thất, sản xuất đồ gỗ.
           </p>
         </div>
 
@@ -128,49 +140,15 @@ function Home() {
 
         {/* Stats Grid */}
         <div className="stats-grid">
-          <div className="stat-card">
-            <svg className="stat-icon" width="74" height="74" viewBox="0 0 74 74" fill="none">
-              <path d="M8.70605 8.70593C8.70605 24.3323 21.3738 37 37.0002 37C52.6266 37 65.2943 24.3323 65.2943 8.70593H55.8629C55.8629 19.1235 47.4178 27.5687 37.0002 27.5687C26.5826 27.5687 18.1374 19.1235 18.1374 8.70593H8.70605Z" fill="#949494"/>
-              <path d="M37.0002 18.1373C31.7914 18.1373 27.5688 13.9147 27.5688 8.70594L46.4315 8.70593C46.4315 13.9147 42.209 18.1373 37.0002 18.1373Z" fill="#949494"/>
-              <path d="M37.0002 37C21.3738 37 8.70605 49.6678 8.70605 65.2942H18.1374C18.1374 54.8766 26.5826 46.4314 37.0002 46.4314C47.4178 46.4314 55.8629 54.8766 55.8629 65.2942L65.2943 65.2942C65.2943 49.6678 52.6266 37 37.0002 37Z" fill="#949494"/>
-              <path d="M37.0002 55.8628C31.7914 55.8628 27.5688 60.0854 27.5688 65.2942H46.4315C46.4315 60.0854 42.209 55.8628 37.0002 55.8628Z" fill="#949494"/>
-            </svg>
-            <div className="stat-info">
-              <div className="stat-number">10+</div>
-              <div className="stat-label">Năm kinh nghiệm</div>
+          {STATS.map((s, i) => (
+            <div className="stat-card" key={i}>
+              <img className="stat-icon" src={s.src} alt="" aria-hidden="true" />
+              <div className="stat-info">
+                <div className="stat-number">{s.number}</div>
+                <div className="stat-label">{s.label}</div>
+              </div>
             </div>
-          </div>
-
-          <div className="stat-card">
-            <svg className="stat-icon" width="74" height="74" viewBox="0 0 74 74" fill="none">
-              <path d="M37.0002 30.7125C33.5276 30.7125 30.7126 33.5275 30.7126 37C30.7126 40.4726 33.5276 43.2876 37.0002 43.2876C40.4727 43.2876 43.2878 40.4726 43.2878 37C43.2878 33.5275 40.4727 30.7125 37.0002 30.7125Z" fill="#949494"/>
-              <path fillRule="evenodd" clipRule="evenodd" d="M8.70605 37C8.70605 21.3736 21.3738 8.70593 37.0002 8.70593C52.6266 8.70593 65.2943 21.3736 65.2943 37C65.2943 52.6265 52.6266 65.2942 37.0002 65.2942C21.3738 65.2942 8.70605 52.6265 8.70605 37ZM18.0165 37C18.0165 26.1422 26.1424 18.0164 37.0002 18.0164C47.858 18.0164 55.9838 26.1422 55.9838 37C55.9838 47.8579 47.858 55.9837 37.0002 55.9837C26.1424 55.9837 18.0165 47.8579 18.0165 37Z" fill="#949494"/>
-            </svg>
-            <div className="stat-info">
-              <div className="stat-number">120+</div>
-              <div className="stat-label">Dự án thành công</div>
-            </div>
-          </div>
-
-          <div className="stat-card">
-            <svg className="stat-icon" width="74" height="74" viewBox="0 0 74 74" fill="none">
-              <path fillRule="evenodd" clipRule="evenodd" d="M8.479 37C8.479 52.0583 20.4419 63.9792 35.581 63.9792C42.3294 63.9792 47.8147 62.7869 51.9893 60.4861C60.4191 55.8434 65.5207 47.7496 65.5207 37C65.5207 31.6876 64.3737 27.0372 61.9784 23.082C59.6051 19.1284 56.4049 15.851 52.0758 13.5679C47.7511 11.2871 42.3422 10.0209 35.581 10.0209C20.5805 10.0209 8.479 21.7273 8.479 37ZM55.07 37.0694C55.07 49.4328 45.4852 59.2482 33.9972 59.2482C30.2514 59.2482 26.8239 58.2504 23.5709 56.3073C17.1544 52.4351 13.1223 44.9999 13.1223 37.0694C13.1223 25.1647 22.2702 14.8906 33.9972 14.8906C45.5467 14.8906 55.07 24.8399 55.07 37.0694Z" fill="#949494"/>
-            </svg>
-            <div className="stat-info">
-              <div className="stat-number">49+</div>
-              <div className="stat-label">Nhân công tại xưởng</div>
-            </div>
-          </div>
-
-          <div className="stat-card">
-            <svg className="stat-icon" width="74" height="74" viewBox="0 0 74 74" fill="none">
-              <path fillRule="evenodd" clipRule="evenodd" d="M37.0002 65.2942C21.3738 65.2942 8.70605 52.6265 8.70605 37C8.70605 21.3736 21.3738 8.70593 37.0002 8.70593C52.6266 8.70593 65.2943 21.3736 65.2943 37C65.2943 52.6265 52.6266 65.2942 37.0002 65.2942ZM23.1648 54.1145C18.1804 50.08 14.9936 43.9122 14.9936 37C14.9936 30.0879 18.1804 23.9201 23.1648 19.8856C22.9606 20.8425 22.8531 21.8352 22.8531 22.853V51.1471C22.8531 52.1649 22.9606 53.1576 23.1648 54.1145ZM50.8355 19.8856C55.82 23.9201 59.0067 30.0879 59.0067 37C59.0067 43.9122 55.82 50.08 50.8355 54.1145C51.0397 53.1576 51.1472 52.1649 51.1472 51.1471V22.853C51.1472 21.8352 51.0397 20.8425 50.8355 19.8856ZM37.0002 14.9935C41.3408 14.9935 44.8596 18.5123 44.8596 22.853V51.1471C44.8596 55.4878 41.3408 59.0066 37.0002 59.0066C32.6595 59.0066 29.1407 55.4878 29.1407 51.1471V22.853C29.1407 18.5123 32.6595 14.9935 37.0002 14.9935Z" fill="#949494"/>
-            </svg>
-            <div className="stat-info">
-              <div className="stat-number">60+</div>
-              <div className="stat-label">Nhân công tại công trình</div>
-            </div>
-          </div>
+          ))}
         </div>
 
         {/* Infrastructure Section */}
@@ -257,7 +235,7 @@ function Home() {
           <div className="service-card">
             <div className="service-order">02</div>
             <div className="service-image-wrapper">
-              <img src={thicong} alt="Sản xu���t & thi công" />
+              <img src={thicong} alt="Sản xuất & thi công" />
             </div>
             <h3 className="service-title">Sản xuất &<br />thi công nội thất</h3>
           </div>
@@ -290,41 +268,43 @@ function Home() {
         </div>
 
         <div className="projects-grid">
-          <div className="project-card project-large-1">
-            <div className="project-card-wrapper">
-              <img src={home2} alt="Office Eximbank" className="project-image" />
+          <div className="project-card large pos-a">
+            <div className="project-card-wrapper">  {/* was only project-media */}
+              <img src={home2} alt="Office Eximbank" />
               <h3 className="project-title">OFFICE EXIMBANK - DISTRICT 1</h3>
             </div>
           </div>
 
-          <div className="project-card project-small-1">
+          <div className="project-card small pos-b">
             <div className="project-card-wrapper">
-              <img src={home1} alt="Office KSF Bank" className="project-image" />
+              <img src={home1} alt="Office KSF Bank" />
               <h3 className="project-title">OFFICE KSF BANK - DISTRICT 2</h3>
             </div>
           </div>
 
-          <div className="project-card project-large-2">
+          <div className="project-card large pos-c">
             <div className="project-card-wrapper">
-              <img src={home3} alt="Penthouse" className="project-image" />
+              <img src={home3} alt="Penthouse" />
               <h3 className="project-title">PENTHOUSE MR QUANG MUSICIAN</h3>
             </div>
           </div>
 
-          <div className="project-card project-small-2">
+          <div className="project-card small pos-d">
             <div className="project-card-wrapper">
-              <img src={home5} alt="Townhouse" className="project-image" />
+              <img src={home5} alt="Townhouse" />
               <h3 className="project-title">TOWNHOUSE - LONG AN PROVINCE</h3>
             </div>
           </div>
 
-          <div className="project-card project-large-3">
+          <div className="project-card large pos-e">
             <div className="project-card-wrapper">
-              <img src={home4} alt="Phuc Long" className="project-image" />
+              <img src={home4} alt="Phúc Long" />
               <h3 className="project-title">PHÚC LONG TEA & COFFEE</h3>
             </div>
           </div>
         </div>
+
+
       </section>
 
       {/* Contact Section */}
