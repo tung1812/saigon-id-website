@@ -1,0 +1,279 @@
+{
+  "home": {
+    "badge": {
+      "about": "Giới thiệu",
+      "clients": "Khách hàng / Đối tác",
+      "services": "Dịch vụ",
+      "projects": "Dự án"
+    },
+    "link": {
+      "about": "Về chúng tôi",
+      "all_services": "Tất cả dịch vụ",
+      "all_projects": "Tất cả dự án",
+      "infrastructure": "Cơ sở hạ tầng"
+    },
+    "about": {
+      "intro": "GIỚI THIỆU",
+      "description": "CÔNG TY TNHH XÂY DỰNG VÀ KIẾN TRÚC SAIGON ID (viết tắt SID). “ID” là viết tắt của Identity – bản sắc; “ID” – Ý tưởng trong thiết kế; đồng thời cũng là Interior & Design (thiết kế nội thất). Chúng tôi tin rằng mỗi ngôi nhà, mỗi tác phẩm đều xứng đáng có một “ID” riêng – phản ánh đúng gu thẩm mỹ, lối sống và giá trị riêng. Bên cạnh thiết kế, chúng tôi còn thi công trang trí nội – ngoại thất và sản xuất đồ gỗ."
+    },
+    "stats": {
+      "years_experience": "Năm kinh nghiệm",
+      "successful_projects": "Dự án thành công",
+      "factory_staff": "Nhân công tại xưởng",
+      "site_staff": "Nhân công tại công trình"
+    },
+    "infrastructure": {
+      "title": "Nhà máy sản xuất",
+      "description": "Với diện tích nhà máy 900 m², chúng tôi đã đầu tư hệ thống máy móc sản xuất và máy chế biến gỗ đáp ứng hầu hết các yêu cầu khắt khe cũng như số lượng đơn hàng lớn từ khách hàng."
+    },
+    "clients": {
+      "badge": "KHÁCH HÀNG/ ĐỐI TÁC",
+      "alt_generic": "Logo Khách hàng / Đối tác"
+    },
+    "services": {
+      "badge": "DỊCH VỤ",
+      "title_line1": "DỊCH VỤ",
+      "title_line2": "CỦA CHÚNG TÔI",
+      "all_link": "Tất cả dịch vụ",
+      "items": {
+        "design": {
+          "order": "01",
+          "title_line1": "Thiết kế",
+          "title_line2": "nội thất",
+          "alt": "Thiết kế nội thất"
+        },
+        "manufacture_construct": {
+          "order": "02",
+          "title_line1": "Sản xuất &",
+          "title_line2": "thi công nội thất",
+          "alt": "Sản xuất & thi công"
+        },
+        "loose_furniture": {
+          "order": "03",
+          "title_line1": "Cung cấp",
+          "title_line2": "nội thất rời",
+          "alt": "Nội thất rời"
+        },
+        "restaurant_hotel_setup": {
+          "order": "04",
+          "title_line1": "Set up",
+          "title_line2": "nhà hàng - khách sạn",
+          "alt": "Setup nhà hàng - khách sạn"
+        }
+      }
+    },
+    "projects": {
+      "badge": "DỰ ÁN",
+      "title_line1": "DỰ ÁN",
+      "title_line2": "TIÊU BIỂU",
+      "all_link": "Tất cả dự án",
+      "cards": {
+        "eximbank": "OFFICE EXIMBANK - QUẬN 1",
+        "ksf": "OFFICE KSF BANK - QUẬN 2",
+        "penthouse_quang": "PENTHOUSE MR QUANG MUSICIAN",
+        "townhouse": "NHÀ PHỐ - TỈNH LONG AN",
+        "phuclong": "PHÚC LONG TEA & COFFEE"
+      }
+    },
+    "hero": {
+      "alt": "Bộ sưu tập thiết kế nội thất"
+    },
+    "factory_image_alt": "Nhà máy sản xuất"
+  },
+  "about": {
+    "hero": {
+      "title": "Về Chúng Tôi",
+      "description": "CÔNG TY TNHH XÂY DỰNG VÀ KIẾN TRÚC SAIGON ID (viết tắt SID). “ID” là viết tắt của Identity – bản sắc; đồng thời là Ý tưởng trong thiết kế và cũng là Interior & Design. Chúng tôi tin rằng mỗi ngôi nhà, mỗi tác phẩm đều xứng đáng có một “ID” riêng – phản ánh đúng gu thẩm mỹ, lối sống và giá trị cá nhân. Bên cạnh thiết kế, chúng tôi còn thi công trang trí nội – ngoại thất và sản xuất đồ gỗ."
+    },
+    "mvv": {
+      "title_line1": "Sứ mệnh – Giá trị cốt lõi –",
+      "title_line2": "Định hướng tương lai",
+      "mission_title": "Sứ mệnh",
+      "mission_description": "Phát huy tối đa nguồn nhân lực, kinh nghiệm và sáng tạo để mang đến cho khách hàng những sản phẩm nội thất tốt nhất.",
+      "values_title_line1": "Giá trị",
+      "values_title_line2": "Cốt lõi",
+      "values_description": "Khẳng định niềm tin, phục vụ sự hài lòng của khách hàng là nhiệm vụ hàng đầu. Công trình bền đẹp, đúng tiến độ. Dịch vụ tư vấn, thiết kế chuyên nghiệp. Môi trường làm việc sáng tạo – hiệu quả. Đội ngũ đoàn kết, thân thiện.",
+      "vision_title_line1": "Định hướng",
+      "vision_title_line2": "Tương lai",
+      "vision_description": "Phát triển hình ảnh SAIGON ID với sự sáng tạo không ngừng trong thiết kế và chất lượng sản phẩm ngày một nâng cao; cùng đội ngũ lành nghề, quyết tâm trở thành đơn vị thiết kế & thi công nội thất hàng đầu Việt Nam."
+    },
+    "factory": {
+      "title": "Nhà Máy Sản Xuất",
+      "description": "Với diện tích 900 m², chúng tôi đã đầu tư hệ thống máy móc sản xuất và chế biến gỗ đáp ứng các yêu cầu khắt khe và khối lượng đơn hàng lớn của khách hàng.",
+      "link": "Cơ Sở Sản Xuất",
+      "image_alt_office": "Văn phòng SAIGON ID",
+      "image_alt_factory": "Khu vực sản xuất"
+    }
+  },
+  "projects": {
+    "grid": {
+      "balisa_hotel": "BALISA HOTEL",
+      "penthouse_mr_quang": "PENTHOUSE MR QUANG MUSICIAN",
+      "estella_apartment": "CHUNG CƯ ESTELLA",
+      "apec_mandala": "APEC MANDALA CHARM BAY",
+      "kien_long_bank": "KIÊN LONG BANK",
+      "pizza_4ps": "PIZZA 4P'S",
+      "coffee_shop": "COFFEE SHOP",
+      "penthouse_masteri": "PENTHOUSE MASTERI",
+      "phuc_long_coffee": "PHÚC LONG COFFEE"
+    },
+    "alts": {
+      "balisa_hotel": "Khách sạn Balisa",
+      "penthouse_mr_quang": "Penthouse Mr Quang Musician",
+      "estella_apartment": "Chung cư Estella",
+      "apec_mandala": "Apec Mandala Charm Bay",
+      "kien_long_bank": "Kiên Long Bank",
+      "pizza_4ps": "Pizza 4P's",
+      "coffee_shop": "Quán cà phê",
+      "penthouse_masteri": "Penthouse Masteri",
+      "phuc_long_coffee": "Phúc Long Coffee",
+      "bg": "Nền trang trí"
+    }
+  },
+  "project_detail": {
+    "labels": {
+      "location": "Địa điểm",
+      "related_projects": "Dự án khác",
+      "image_alt_prefix": "Hình"
+    },
+    "projectsData": {
+      "balisa-hotel": {
+        "title": "BALISA HOTEL",
+        "location": "Quận 1 – TP. Hồ Chí Minh",
+        "description": "Balisa Hotel tại Quận 1, TP.HCM là dự án thi công hoàn thiện cao cấp do đội ngũ chúng tôi thực hiện. Sảnh ấn tượng với vật liệu sang trọng như đá, kim loại, kính, mang lại cảm giác hiện đại và tinh tế. Dự án thể hiện khả năng biến ý tưởng thành không gian thực tế, nâng tầm trải nghiệm lưu trú ngay trung tâm thành phố."
+      },
+      "penthouse-mr-quang": {
+        "title": "PENTHOUSE MR QUANG",
+        "location": "Quận 1 – TP. Hồ Chí Minh",
+        "description": "Không gian sang trọng nhưng ấm cúng với sofa nhung, da và chi tiết kim loại ánh vàng. Bố cục được sắp xếp hợp lý, tối ưu công năng và thẩm mỹ cho cuộc sống tiện nghi."
+      },
+      "chung-cu-estalla": {
+        "title": "CHUNG CƯ ESTELLA",
+        "location": "Chung cư Estella – TP. Hồ Chí Minh",
+        "description": "Phong cách tối giản hiện đại “WASABI” với tông gỗ sáng và ánh sáng vàng ấm. Hệ tủ âm tường thông minh, kệ cong mềm mại và chi tiết gỗ tự nhiên tạo nên không khí ấm cúng nhưng tinh tế."
+      },
+      "apec-mandala": {
+        "title": "APEC MANDALA CHARM BAY",
+        "location": "Mũi Né – Phan Thiết",
+        "description": "Nội thất ấm áp với đường nét tối giản, hoàn thiện kỹ lưỡng và hài hòa. Tổng thể mang lại cảm giác thư giãn, thanh lịch, phù hợp tiêu chuẩn nghỉ dưỡng cao cấp."
+      },
+      "kien-long-bank": {
+        "title": "KIÊN LONG BANK",
+        "location": "Quận 1 – TP. Hồ Chí Minh",
+        "description": "Không gian giao dịch phong cách hiện đại với tông trắng đặc trưng, phản ánh hình ảnh ngân hàng đang đổi mới và hướng tới trải nghiệm khách hàng tối ưu."
+      },
+      "pizza-4ps": {
+        "title": "PIZZA 4P'S",
+        "location": "AEON Tân Phú – TP. Hồ Chí Minh",
+        "description": "Không gian đương đại, tối giản nhưng tinh tế, cột gỗ tự nhiên tạo điểm nhấn ấm áp. Tông tối nền nã cùng ánh sáng vàng dịu mang lại bầu không khí sang trọng, ấm cúng – thể hiện bản sắc sáng tạo của Pizza 4P’s."
+      },
+      "coffee-shop": {
+        "title": "COFFEE SHOP",
+        "location": "TP. Buôn Ma Thuột – Đắk Lắk",
+        "description": "Quán cà phê hiện đại, ấm áp và tối giản. Chất liệu gỗ tự nhiên, ánh sáng vàng nhẹ và mảng kính lớn tạo cảm giác thoáng đãng, gần gũi thiên nhiên. Bố trí chỗ ngồi linh hoạt cho nhóm hoặc khách đi một mình – thân thiện, trẻ trung nhưng tinh tế."
+      },
+      "penthouse-masteri": {
+        "title": "PENTHOUSE MASTERI",
+        "location": "Thảo Điền – TP. Hồ Chí Minh",
+        "description": "Nội thất hiện đại tối giản với gam trung tính và vật liệu tự nhiên – sang trọng nhưng ấm áp. Bố cục hài hòa, tinh tế, thể hiện lối sống hiện đại và gu thẩm mỹ thanh lịch."
+      },
+      "phuc-long-coffee": {
+        "title": "PHÚC LONG COFFEE",
+        "location": "Quận 1 – TP. Hồ Chí Minh",
+        "description": "Không gian cà phê hiện đại, ấm cúng với gỗ tự nhiên, tông màu trung tính và ánh sáng vàng dịu. Bố trí chỗ ngồi đa dạng cho nhiều nhu cầu. Mảng xanh và décor tinh tế mang lại cảm giác thư giãn, thân thiện nhưng vẫn sang trọng."
+      }
+    },
+    "related": {
+      "title": "Dự án khác"
+    },
+    "a11y": {
+      "main_image_prev": "Hình trước",
+      "main_image_next": "Hình tiếp theo",
+      "thumb_view": "Xem hình",
+      "open_gallery": "Xem tất cả hình",
+      "close_gallery": "Đóng bộ sưu tập"
+    }
+  },
+  "furniture": {
+    "hero": {
+      "title": "Nội Thất Rời",
+      "description": "Chúng tôi cung cấp nội thất rời như bàn, ghế, tủ kệ, giường và nhiều hạng mục khác, sản xuất với quy trình kỹ lưỡng nhằm đảm bảo độ bền và thẩm mỹ. Mỗi sản phẩm mang phong cách hiện đại, tinh tế và dễ phối hợp với nhiều không gian. Với đa dạng chất liệu, kiểu dáng, khách hàng có thể chọn sản phẩm phù hợp nhất cho nhà ở hoặc văn phòng.",
+      "alt": "Sản xuất nội thất"
+    },
+    "gallery": {
+      "a11y": {
+        "scroll_left": "Cuộn sang trái",
+        "scroll_right": "Cuộn sang phải",
+        "item_alt_prefix": "Món nội thất"
+      }
+    },
+    "design_build": {
+      "title": "Thiết Kế & Thi Công Nội Thất",
+      "description": "Dịch vụ trọn gói từ tư vấn ý tưởng, bản vẽ chi tiết đến triển khai thực tế. Mỗi công trình đều đáp ứng công năng và thể hiện phong cách riêng của gia chủ. Kiến trúc sư và thợ lành nghề đảm bảo tiến độ và chất lượng, mang đến không gian sống hoàn thiện.",
+      "image_alt": "Thiết kế & Thi công nội thất"
+    },
+    "hospitality": {
+      "title": "Set Up Nhà Hàng – Khách Sạn",
+      "description": "Với kinh nghiệm F&B và hospitality, chúng tôi cung cấp dịch vụ setup toàn diện cho nhà hàng, khách sạn: từ nội thất, khu trưng bày đến tổ chức vận hành. Mục tiêu là không gian chuyên nghiệp, sang trọng, đem lại trải nghiệm thoải mái và ấn tượng. Đồng hành từ ý tưởng đến hoàn thiện, đảm bảo đồng bộ và tối ưu chi phí.",
+      "image_alt": "Set up Nhà hàng – Khách sạn"
+    }
+  },
+  "infrastructure": {
+    "factory": {
+      "hero_alt": "Khu vực sản xuất",
+      "title": "Nhà Máy Sản Xuất",
+      "description": "Để tạo ra sản phẩm chất lượng cao, chúng tôi áp dụng quy trình nghiêm ngặt ở mọi giai đoạn. Từ khâu chọn nguyên liệu, xử lý đến hoàn thiện, mỗi bước đều được thực hiện cẩn thận để đáp ứng tiêu chuẩn kỹ thuật ở mức cao nhất.\n\nVới diện tích 900 m², chúng tôi đã đầu tư hệ thống máy móc sản xuất và chế biến gỗ đáp ứng yêu cầu khắt khe và số lượng đơn hàng lớn.",
+      "images_alt": "Nhà máy"
+    },
+    "painting": {
+      "title": "Khu Vực Sơn",
+      "description": "Khu sơn riêng biệt đảm bảo bề mặt hoàn thiện mịn, đều màu và bền đẹp theo thời gian. Quy trình kiểm soát chặt chẽ đáp ứng yêu cầu về độ bền. Mỗi chi tiết đều được kiểm tra kỹ lưỡng để sản phẩm đến tay khách hàng ở trạng thái tốt nhất.",
+      "image_alt": "Khu vực sơn"
+    },
+    "bg": {
+      "a": "Nền trang trí",
+      "b": "Nền trang trí"
+    }
+  },
+  "common": {
+    "company_name": "SAIGON ID",
+    "logo_alt": "Logo SAIGON ID"
+  },
+  "nav": {
+    "home_aria": "Về trang chủ",
+    "about": "VỀ CHÚNG TÔI",
+    "projects": "DỰ ÁN",
+    "furniture": "NỘI THẤT RỜI",
+    "infrastructure": "CƠ SỞ HẠ TẦNG",
+    "menu_aria": "Mở menu",
+    "toggle_lang_aria": "Chuyển ngôn ngữ",
+    "toggle_lang_title": "Chuyển sang {{lang}}"
+  },
+  "contact": {
+    "title": "LIÊN HỆ",
+    "newsletter": {
+      "placeholder": "Email của bạn",
+      "subscribe_aria": "Đăng ký nhận tin"
+    },
+    "info": {
+      "main_address_label": "Địa chỉ chính",
+      "main_address_value": "1236/8 Phạm Văn Đồng, Khu phố 12,\nPhường Linh Xuân, TP Hồ Chí Minh, Việt Nam",
+      "branch_label": "Chi nhánh Đà Lạt",
+      "branch_address_value": "256 Xô Viết Nghệ Tĩnh,\nPhường Lang Biang - Đà Lạt, tỉnh Lâm Đồng",
+      "phone_label": "Số điện thoại",
+      "phone_value_main": "+(84) 908 374 266 - Mr. Thuận",
+      "phone_value_branch": "+(84) 917 770 536 - Mr. Huy",
+      "email_label": "Email"
+    },
+    "social": {
+      "facebook": "Facebook",
+      "email": "Email",
+      "phone": "Điện thoại"
+    },
+    "thanks": "Công Ty TNHH Xây Dựng Kiến Trúc SAIGON ID xin gửi lời cảm ơn sâu sắc chân thành nhất đến Quý khách hàng, đối tác đã tin tưởng, hợp tác và ủng hộ chúng tôi."
+  },
+  "footer": {
+    "copyright": "© SID 2025. All Rights Reserved",
+    "back_to_top": "Lên đầu trang"
+  }
+}

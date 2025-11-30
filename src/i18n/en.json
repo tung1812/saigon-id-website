@@ -1,0 +1,279 @@
+{
+  "home": {
+    "badge": {
+      "about": "About",
+      "clients": "Clients / Partners",
+      "services": "Services",
+      "projects": "Projects"
+    },
+    "link": {
+      "about": "About Us",
+      "all_services": "All Services",
+      "all_projects": "All Projects",
+      "infrastructure": "Infrastructure"
+    },
+    "about": {
+      "intro": "ABOUT",
+      "description": "SAIGON ID Construction & Architecture Co., Ltd. (SID). “ID” stands for Identity - an exact likeness in nature or qualities; it also reflects Ideas in design and Interior & Design. We believe every home and every work deserves its own unique “ID”, reflecting individual taste, lifestyle, and values. Beyond design, we also execute interior - exterior decoration and woodworking production."
+    },
+    "stats": {
+      "years_experience": "Years of experience",
+      "successful_projects": "Successful projects",
+      "factory_staff": "Factory workforce",
+      "site_staff": "On-site workforce"
+    },
+    "infrastructure": {
+      "title": "Manufacturing Facility",
+      "description": "With a 900 m² factory, we have invested in production and woodworking machinery that meet stringent requirements and large order volumes."
+    },
+    "clients": {
+      "badge": "CLIENTS / PARTNERS",
+      "alt_generic": "Client / Partner logo"
+    },
+    "services": {
+      "badge": "SERVICES",
+      "title_line1": "OUR",
+      "title_line2": "SERVICES",
+      "all_link": "All Services",
+      "items": {
+        "design": {
+          "order": "01",
+          "title_line1": "Interior",
+          "title_line2": "Design",
+          "alt": "Interior design"
+        },
+        "manufacture_construct": {
+          "order": "02",
+          "title_line1": "Manufacture &",
+          "title_line2": "Interior Fit-out",
+          "alt": "Manufacturing & construction"
+        },
+        "loose_furniture": {
+          "order": "03",
+          "title_line1": "",
+          "title_line2": "Furniture",
+          "alt": "furniture"
+        },
+        "restaurant_hotel_setup": {
+          "order": "04",
+          "title_line1": "Restaurant &",
+          "title_line2": "Hotel Setup",
+          "alt": "Restaurant & hotel setup"
+        }
+      }
+    },
+    "projects": {
+      "badge": "PROJECTS",
+      "title_line1": "FEATURED",
+      "title_line2": "PROJECTS",
+      "all_link": "All Projects",
+      "cards": {
+        "eximbank": "OFFICE EXIMBANK – DISTRICT 1",
+        "ksf": "OFFICE KSF BANK – DISTRICT 2",
+        "penthouse_quang": "PENTHOUSE MR QUANG MUSICIAN",
+        "townhouse": "TOWNHOUSE – LONG AN PROVINCE",
+        "phuclong": "PHUC LONG TEA & COFFEE"
+      }
+    },
+    "hero": {
+      "alt": "Interior design showcase"
+    },
+    "factory_image_alt": "Manufacturing facility"
+  },
+  "about": {
+    "hero": {
+      "title": "About Us",
+      "description": "SAIGON ID Construction & Architecture Co., Ltd. (abbreviated as SID). “ID” stands for Identity; it also hints at Ideas in design, and Interior & Design. We believe every home and every work deserves its own “ID” that reflects taste, lifestyle, and personal values. Besides design, we also deliver interior - exterior fit-out and in-house woodworking."
+    },
+    "mvv": {
+      "title_line1": "Mission - Core Values -",
+      "title_line2": "Future Orientation",
+      "mission_title": "Mission",
+      "mission_description": "Our foremost purpose is to leverage people, experience, and creativity to deliver the best interior products to our clients.",
+      "values_title_line1": "Core",
+      "values_title_line2": "Values",
+      "values_description": "Earning trust and serving customer satisfaction is our top priority. Projects: durable, beautiful, and on schedule. Professional consulting and design services. A creative and efficient workplace. A united and friendly team.",
+      "vision_title_line1": "Future",
+      "vision_title_line2": "Orientation",
+      "vision_description": "Develop the SAIGON ID image through relentless creativity in design and ever-improving product quality with a skilled workforce—striving to become a leading interior design & build firm in Vietnam."
+    },
+    "factory": {
+      "title": "Manufacturing Facility",
+      "description": "With a 900 m² factory, we have invested in a full suite of production machinery and woodworking equipment to meet stringent requirements and large order volumes from our clients.",
+      "link": "Manufacturing Infrastructure",
+      "image_alt_office": "SAIGON ID Office",
+      "image_alt_factory": "Factory Production"
+    }
+  },
+  "projects": {
+    "grid": {
+      "balisa_hotel": "BALISA HOTEL",
+      "penthouse_mr_quang": "PENTHOUSE MR QUANG MUSICIAN",
+      "estella_apartment": "ESTELLA APARTMENT",
+      "apec_mandala": "APEC MANDALA CHARM BAY",
+      "kien_long_bank": "KIEN LONG BANK",
+      "pizza_4ps": "PIZZA 4P'S",
+      "coffee_shop": "COFFEE SHOP",
+      "penthouse_masteri": "PENTHOUSE MASTERI",
+      "phuc_long_coffee": "PHUC LONG COFFEE"
+    },
+    "alts": {
+      "balisa_hotel": "Balisa Hotel",
+      "penthouse_mr_quang": "Penthouse Mr Quang Musician",
+      "estella_apartment": "Estella Apartment",
+      "apec_mandala": "Apec Mandala Charm Bay",
+      "kien_long_bank": "Kien Long Bank",
+      "pizza_4ps": "Pizza 4P's",
+      "coffee_shop": "Coffee Shop",
+      "penthouse_masteri": "Penthouse Masteri",
+      "phuc_long_coffee": "Phuc Long Coffee",
+      "bg": "Decorative background"
+    }
+  },
+  "project_detail": {
+    "labels": {
+      "location": "Location",
+      "related_projects": "Related Projects",
+      "image_alt_prefix": "Image"
+    },
+    "projectsData": {
+      "balisa-hotel": {
+        "title": "BALISA HOTEL",
+        "location": "District 1 – Ho Chi Minh City",
+        "description": "Located in District 1, HCMC - Balisa Hotel is a premium handover project. The lobby uses luxurious materials—stone, metal, and glass—for a modern, refined feel. It showcases our ability to turn ideas into real spaces that elevate the stay experience downtown."
+      },
+      "penthouse-mr-quang": {
+        "title": "PENTHOUSE MR QUANG",
+        "location": "District 1 – Ho Chi Minh City",
+        "description": "A luxurious yet cozy space featuring velvet and leather sofas with gold-toned metal accents. The layout is thoughtfully organized to optimize both functionality and aesthetics for comfortable living."
+      },
+      "chung-cu-estalla": {
+        "title": "ESTELLA APARTMENT",
+        "location": "Estella Apartment – Ho Chi Minh City",
+        "description": "Minimal, modern “WASABI” style with light wood tones and warm lighting. Smart built-ins, soft curves, and natural wood create a cozy yet refined home."
+      },
+      "apec-mandala": {
+        "title": "APEC MANDALA CHARM BAY",
+        "location": "Mui Ne – Phan Thiet",
+        "description": "Warm interior with minimal lines and meticulous finishes. The overall vibe is relaxing and elegant—fitting for a premium resort destination. The overall space brings relaxation and elegance—aligned with premium hospitality standards at a renowned Vietnamese destination."
+      },
+      "kien-long-bank": {
+        "title": "KIEN LONG BANK",
+        "location": "District 1 – Ho Chi Minh City",
+        "description": "A modern, signature white trading-office interior reflecting a bank in transformation and oriented toward optimal customer experience."
+      },
+      "pizza-4ps": {
+        "title": "PIZZA 4P'S",
+        "location": "AEON Tan Phu – Ho Chi Minh City",
+        "description": "A contemporary, minimalist yet refined ambiance with natural wood columns adding warmth. Muted dark tones and soft amber lighting create a welcoming but upscale dining atmosphere—expressing the creative identity of Pizza 4P’s."
+      },
+      "coffee-shop": {
+        "title": "COFFEE SHOP",
+        "location": "Buon Ma Thuot City – Dak Lak",
+        "description": "A modern café space that’s warm and minimal. Natural wood, gentle warm lighting, and large glazing provide an airy, nature-friendly feel. Flexible seating suits groups and solo visitors alike—friendly, youthful, and subtly elegant."
+      },
+      "penthouse-masteri": {
+        "title": "PENTHOUSE MASTERI",
+        "location": "Thao Dien – Ho Chi Minh City",
+        "description": "Modern minimalism with neutral tones and natural materials—elegant yet warm. A harmonious layout reflects refined, contemporary living."
+      },
+      "phuc-long-coffee": {
+        "title": "PHUC LONG COFFEE",
+        "location": "District 1 – Ho Chi Minh City",
+        "description": "A modern, cozy coffee space with natural wood, neutral tones, and soft warm light. Diverse seating supports different groups and use cases. Greenery and delicate décor deliver a relaxing, friendly atmosphere that remains refined."
+      }
+    },
+    "related": {
+      "title": "Other Projects"
+    },
+    "a11y": {
+      "main_image_prev": "Previous image",
+      "main_image_next": "Next image",
+      "thumb_view": "View image",
+      "open_gallery": "View all images",
+      "close_gallery": "Close gallery"
+    }
+  },
+  "furniture": {
+    "hero": {
+      "title": "Furniture",
+      "description": "We provide a full range of furniture - including tables, chairs, cabinets, beds, and more-crafted through a careful manufacturing process to ensure both durability and visual appeal. Our products feature a modern and refined design language, making them easy to pair with different interior styles. With diverse materials and styles available, clients can select pieces that perfectly suit their home or office.",
+      "alt": "Furniture Manufacturing"
+    },
+    "gallery": {
+      "a11y": {
+        "scroll_left": "Scroll left",
+        "scroll_right": "Scroll right",
+        "item_alt_prefix": "Furniture item"
+      }
+    },
+    "design_build": {
+      "title": "Interior Design & Construction",
+      "description": "We provide end-to-end interior design and build services, from concept consulting and detailed drawings to on-site implementation. Every project is crafted to meet functional needs while expressing the owner's personal style. Our architects and skilled craftsmen ensure schedule and quality, delivering a truly finished living space.",
+      "image_alt": "Interior Design & Construction"
+    },
+    "hospitality": {
+      "title": "Restaurant & Hotel Setup",
+      "description": "Drawing on extensive experience in F&B and hospitality, we deliver complete setup solutions for restaurants and hotels, from interior fit-out and display layouts to functional zoning. We aim to build professional, elegant spaces that offer comfort and leave a lasting impression. From concept to final handover, we work closely with clients to ensure consistency, efficiency, and cost-effectiveness",
+      "image_alt": "Restaurant & Hotel Setup"
+    }
+  },
+  "infrastructure": {
+    "factory": {
+      "hero_alt": "Manufacturing Area",
+      "title": "Manufacturing Facility",
+      "description": "To deliver top-quality products, we apply strict procedures at every stage. From material selection and processing to final finishing, each step is handled with care to meet technical standards at the highest level.\n\nWith a 900 m² factory, we have invested in production machinery and woodworking equipment that meet stringent requirements and support large order volumes.",
+      "images_alt": "Factory"
+    },
+    "painting": {
+      "title": "Painting Area",
+      "description": "With a dedicated painting zone, we ensure the finished surface is consistently smooth, evenly colored, and durable over time. Our tightly controlled process meets demanding requirements for longevity. Every detail is carefully inspected so products reach customers in the best possible condition.",
+      "image_alt": "Painting Area"
+    },
+    "bg": {
+      "a": "Decorative background",
+      "b": "Decorative background"
+    }
+  },
+  "common": {
+    "company_name": "SAIGON ID",
+    "logo_alt": "SAIGON ID Logo"
+  },
+  "nav": {
+    "home_aria": "Go to home",
+    "about": "ABOUT US",
+    "projects": "PROJECTS",
+    "furniture": "FURNITURE",
+    "infrastructure": "INFRASTRUCTURE",
+    "menu_aria": "Open menu",
+    "toggle_lang_aria": "Toggle language",
+    "toggle_lang_title": "Switch to {{lang}}"
+  },
+  "contact": {
+    "title": "CONTACT US",
+    "newsletter": {
+      "placeholder": "Your email",
+      "subscribe_aria": "Subscribe"
+    },
+    "info": {
+      "main_address_label": "Head Office",
+      "main_address_value": "1236/8 Pham Van Dong, Quarter 12,\nLinh Xuan Ward, Ho Chi Minh City, Vietnam",
+      "branch_label": "Da Lat Branch",
+      "branch_address_value": "256 Xo Viet Nghe Tinh,\nLang Biang Ward - Da Lat, Lam Dong Province",
+      "phone_label": "Phone",
+      "phone_value_main": "+(84) 908 374 266 - Mr. Thuan",
+      "phone_value_branch": "+(84) 917 770 536 - Mr. Huy",
+      "email_label": "Email"
+    },
+    "social": {
+      "facebook": "Facebook",
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "thanks": "SAIGON ID Construction & Architecture would like to extend our sincere thanks to our valued clients and partners for your trust, collaboration, and support."
+  },
+  "footer": {
+    "copyright": "© SID 2025. All Rights Reserved",
+    "back_to_top": "Back to top"
+  }  
+}

@@ -18,6 +18,9 @@
   --gradient-text: linear-gradient(180deg, #FFF 20.27%, rgba(255, 255, 255, 0.00) 114.59%);
 }
 
+.logo-link { display: inline-block; }
+.logo { cursor: pointer; }
+
 /* ===== Global Resets ===== */
 * {
   margin: 0;
@@ -904,6 +907,31 @@
 
 .back-to-top:hover {
   opacity: 0.8;
+}
+
+@keyframes lang-fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+.lang-fade {
+  animation-name: lang-fade-in;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+  background: transparent;
+}
+
+.lang-btn {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.lang-button {
+  width: 24px;  
+  /* height: 24px; */
+  display: block;
 }
 
 /* ===== Responsive Breakpoints ===== */

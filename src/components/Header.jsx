@@ -1,0 +1,111 @@
+// src/components/Header.jsx
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import FadeOnLangChange from "./FadeOnLangChange";
+
+import logoNgang from "../assets/img/Logo/logo ngang.png";
+import viImg from "../assets/img/Home/icons/Vi.png";
+import enImg from "../assets/img/Home/icons/en.png";
+
+export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { pathname } = useLocation();
+  const { t, i18n } = useTranslation();
+
+  const toggleMenu = () => setIsMenuOpen((s) => !s);
+  const closeMenu = () => setIsMenuOpen(false);
+
+  const currLang = i18n.language === "vi" ? "vi" : "en";
+  const nextLang = currLang === "vi" ? "en" : "vi";
+  const imgFor = (lang) => (lang === "vi" ? viImg : enImg);
+
+  const toggleLang = () => {
+    i18n.changeLanguage(nextLang);
+  };
+
+  return (
+    <nav className="top-bar">
+      <Link to="/" aria-label={t("nav.home_aria")} className="logo-link">
+        <img src={logoNgang} alt={t("common.logo_alt")} className="logo" />
+      </Link>
+
+      {/* Fade the nav labels on language change */}
+      <FadeOnLangChange>
+        <ul className={`nav-menu ${isMenuOpen ? "mobile-menu-open" : ""}`}>
+          <li>
+            <Link
+              to="/about"
+              onClick={closeMenu}
+              aria-current={pathname === "/about" ? "page" : undefined}
+            >
+              {t("nav.about")}
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/projects"
+              onClick={closeMenu}
+              aria-current={pathname === "/projects" ? "page" : undefined}
+            >
+              {t("nav.projects")}
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/furniture"
+              onClick={closeMenu}
+              aria-current={pathname === "/furniture" ? "page" : undefined}
+            >
+              {t("nav.furniture")}
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/infrastructure"
+              onClick={closeMenu}
+              aria-current={pathname === "/infrastructure" ? "page" : undefined}
+            >
+              {t("nav.infrastructure")}
+            </Link>
+          </li>
+        </ul>
+      </FadeOnLangChange>
+
+      <div className="nav-actions">
+        {/* Language image that fades on change */}
+        <button
+          type="button"
+          onClick={toggleLang}
+          className="lang-btn"
+          aria-label={t("nav.toggle_lang_aria")}
+          title={t("nav.toggle_lang_title", { lang: nextLang === "en" ? "English" : "Tiếng Việt" })}
+        >
+          <FadeOnLangChange>
+            {/* key ensures FadeOnLangChange re-animates when language flips */}
+            <img
+              key={nextLang}
+              className="lang-button"
+              src={imgFor(nextLang)}   // show target language icon
+              alt=""
+            />
+          </FadeOnLangChange>
+        </button>
+
+        {/* Mobile hamburger */}
+        <button
+          className="hamburger-menu"
+          aria-label={t("nav.menu_aria")}
+          onClick={toggleMenu}
+          aria-expanded={isMenuOpen}
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M20 7L4 7" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+            <path d="M20 12L4 12" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+            <path d="M20 17L4 17" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+  );
+}
