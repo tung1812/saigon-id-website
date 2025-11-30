@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect,useLayoutEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import './ProjectDetail.css'
 import BackToTopButton from '../components/BackToTopButton'
@@ -15,22 +15,25 @@ import hotel7 from '../assets/img/Project/Hotel/Hotel (7).png'
 import hotel8 from '../assets/img/Project/Hotel/Hotel (8).png'
 
 // Penthouse MR Quang (using Penthouse folder)
-import penthouseMrQuangMain from '../assets/img/Project/Penthouse/penthouseMasteri (1).jpg'
-import penthouseMrQuang1 from '../assets/img/Project/Penthouse/penthouseMasteri (2).jpg'
-import penthouseMrQuang2 from '../assets/img/Project/Penthouse/penthouseMasteri (3).jpg'
-import penthouseMrQuang3 from '../assets/img/Project/Penthouse/penthouseMasteri (4).jpg'
-import penthouseMrQuang4 from '../assets/img/Project/Penthouse/penthouseMasteri (5).jpg'
-import penthouseMrQuang5 from '../assets/img/Project/Penthouse/penthouseMasteri (6).jpg'
-import penthouseMrQuang6 from '../assets/img/Project/Penthouse/penthouseMasteri (7).jpg'
-import penthouseMrQuang7 from '../assets/img/Project/Penthouse/penthouseMasteri (8).jpg'
-import penthouseMrQuang8 from '../assets/img/Project/Penthouse/penthouseMasteri (9).jpg'
+import penthouseMrQuangMain from '../assets/img/Project/mrquang/main.jpg'
+import penthouseMrQuang1 from '../assets/img/Project/mrquang/mrquang1.jpg'
+import penthouseMrQuang2 from '../assets/img/Project/mrquang/mrquang2.jpg'
+import penthouseMrQuang3 from '../assets/img/Project/mrquang/mrquang3.jpg'
+import penthouseMrQuang4 from '../assets/img/Project/mrquang/mrquang4.jpg'
+import penthouseMrQuang5 from '../assets/img/Project/mrquang/mrquang5.jpg'
+import penthouseMrQuang6 from '../assets/img/Project/mrquang/mrquang6.jpg'
+import penthouseMrQuang7 from '../assets/img/Project/mrquang/mrquang7.jpg'
+import penthouseMrQuang8 from '../assets/img/Project/mrquang/mrquang8.jpg'
+import penthouseMrQuang9 from '../assets/img/Project/mrquang/mrquang9.jpg'
+import penthouseMrQuang10 from '../assets/img/Project/mrquang/mrquang10.jpg'
+import penthouseMrQuang11 from '../assets/img/Project/mrquang/mrquang11.jpg'
 
 // Estella Images
-import estellaMain from '../assets/img/Project/estella/estella (1).jpg'
+import estellaMain from '../assets/img/Project/estella/estella (5).jpg'
 import estella1 from '../assets/img/Project/estella/estella (2).jpg'
 import estella2 from '../assets/img/Project/estella/estella (3).jpg'
 import estella3 from '../assets/img/Project/estella/estella (4).jpg'
-import estella4 from '../assets/img/Project/estella/estella (5).jpg'
+import estella4 from '../assets/img/Project/estella/estella (1).jpg'
 import estella5 from '../assets/img/Project/estella/estella (6).jpg'
 import estella6 from '../assets/img/Project/estella/estella (7).jpg'
 import estella7 from '../assets/img/Project/estella/estella (8).jpg'
@@ -41,27 +44,27 @@ import estella11 from '../assets/img/Project/estella/estella (12).jpg'
 import estella12 from '../assets/img/Project/estella/estella (13).jpg'
 
 // APAC Mandala Images
-import apacMain from '../assets/img/Project/apac/apac (1).jpg'
+import apacMain from '../assets/img/Project/apac/apac (4).jpg'
 import apac1 from '../assets/img/Project/apac/apac (2).jpg'
 import apac2 from '../assets/img/Project/apac/apac (3).jpg'
-import apac3 from '../assets/img/Project/apac/apac (4).jpg'
+import apac3 from '../assets/img/Project/apac/apac (1).jpg'
 import apac4 from '../assets/img/Project/apac/apac (5).jpg'
 import apac5 from '../assets/img/Project/apac/apac (6).jpg'
 import apac6 from '../assets/img/Project/apac/apac (7).jpg'
 
 // Kien Long Bank Images
-import bankMain from '../assets/img/Project/kien long/Bank (1).jpg'
+import bankMain from '../assets/img/Project/kien long/Bank (8).jpg'
 import bank1 from '../assets/img/Project/kien long/Bank (2).jpg'
 import bank2 from '../assets/img/Project/kien long/Bank (3).jpg'
 import bank3 from '../assets/img/Project/kien long/Bank (4).jpg'
 import bank4 from '../assets/img/Project/kien long/Bank (5).jpg'
 import bank5 from '../assets/img/Project/kien long/Bank (6).jpg'
 import bank6 from '../assets/img/Project/kien long/Bank (7).jpg'
-import bank7 from '../assets/img/Project/kien long/Bank (8).jpg'
+import bank7 from '../assets/img/Project/kien long/Bank (1).jpg'
 
 // Pizza 4P's Images
-import pizzaMain from '../assets/img/Project/pizza/4p (1).jpg'
-import pizza1 from '../assets/img/Project/pizza/4p (2).jpg'
+import pizzaMain from '../assets/img/Project/pizza/4p (2).jpg'
+import pizza1 from '../assets/img/Project/pizza/4p (1).jpg'
 import pizza2 from '../assets/img/Project/pizza/4p (3).jpg'
 import pizza3 from '../assets/img/Project/pizza/4p (4).jpg'
 import pizza4 from '../assets/img/Project/pizza/4p (5).jpg'
@@ -69,15 +72,15 @@ import pizza5 from '../assets/img/Project/pizza/4p (6).jpg'
 import pizza6 from '../assets/img/Project/pizza/4p (7).jpg'
 
 // Coffee Shop Images
-import coffeeMain from '../assets/img/Project/coffee/coffeeBmt (1).jpg'
-import coffee1 from '../assets/img/Project/coffee/coffeeBmt (2).jpg'
+import coffeeMain from '../assets/img/Project/coffee/coffeeBmt (2).jpg'
+import coffee1 from '../assets/img/Project/coffee/coffeeBmt (1).jpg'
 import coffee2 from '../assets/img/Project/coffee/coffeeBmt (3).jpg'
 import coffee3 from '../assets/img/Project/coffee/coffeeBmt (4).jpg'
 import coffee4 from '../assets/img/Project/coffee/coffeeBmt (5).jpg'
 
 // Penthouse Masteri Images
-import penthouseMasteriMain from '../assets/img/Project/Penthouse/penthouseMasteri (1).png'
-import penthouseMasteri1 from '../assets/img/Project/Penthouse/penthouseMasteri (2).png'
+import penthouseMasteriMain from '../assets/img/Project/Penthouse/penthouseMasteri (2).png'
+import penthouseMasteri1 from '../assets/img/Project/Penthouse/penthouseMasteri (1).jpg'
 import penthouseMasteri2 from '../assets/img/Project/Penthouse/penthouseMasteri (3).jpg'
 import penthouseMasteri3 from '../assets/img/Project/Penthouse/penthouseMasteri (4).jpg'
 import penthouseMasteri4 from '../assets/img/Project/Penthouse/penthouseMasteri (5).jpg'
@@ -85,14 +88,19 @@ import penthouseMasteri5 from '../assets/img/Project/Penthouse/penthouseMasteri 
 import penthouseMasteri6 from '../assets/img/Project/Penthouse/penthouseMasteri (7).jpg'
 import penthouseMasteri7 from '../assets/img/Project/Penthouse/penthouseMasteri (8).jpg'
 import penthouseMasteri8 from '../assets/img/Project/Penthouse/penthouseMasteri (9).jpg'
+import penthouseMasteri9 from '../assets/img/Project/Penthouse/penthouseMasteri (2).jpg'
 
 // Phuc Long Coffee Images
-import phuclongMain from '../assets/img/Project/phuclong/fucklong (1).jpg'
+import phuclongMain from '../assets/img/Project/phuclong/fucklong (1).png'
 import phuclong1 from '../assets/img/Project/phuclong/fucklong (2).jpg'
 import phuclong2 from '../assets/img/Project/phuclong/fucklong (3).jpg'
 import phuclong3 from '../assets/img/Project/phuclong/fucklong (4).jpg'
 import phuclong4 from '../assets/img/Project/phuclong/fucklong (5).jpg'
-import phuclong5 from '../assets/img/Project/phuclong/fucklong (6).jpg'
+import phuclong5 from '../assets/img/Project/phuclong/fucklong (1).jpg'
+import phuclong6 from '../assets/img/Project/phuclong/fucklong (6).jpg'
+
+// Background
+import bg from '../assets/img/Bg/bg4.png'
 
 const projectsData = {
   'balisa-hotel': {
@@ -127,6 +135,9 @@ const projectsData = {
       penthouseMrQuang6,
       penthouseMrQuang7,
       penthouseMrQuang8,
+      penthouseMrQuang9,
+      penthouseMrQuang10,
+      penthouseMrQuang11,
     ],
   },
   'chung-cu-estalla': {
@@ -224,6 +235,7 @@ const projectsData = {
       penthouseMasteri6,
       penthouseMasteri7,
       penthouseMasteri8,
+      penthouseMasteri9,
     ],
   },
   'phuc-long-coffee': {
@@ -238,6 +250,7 @@ const projectsData = {
       phuclong3,
       phuclong4,
       phuclong5,
+      phuclong6,
     ],
   },
 }
@@ -262,9 +275,29 @@ function ProjectDetail() {
   const [modalImageIndex, setModalImageIndex] = useState(0)
   const visibleThumbnails = 5
 
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);   // instant, before paint
+  }, [id]);
+
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, [id])
+    if (!isModalOpen) return;
+
+    // compute scrollbar width
+    const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+    const { style } = document.body;
+    const prevOverflow = style.overflow;
+    const prevPaddingRight = style.paddingRight;
+
+    style.overflow = 'hidden';
+    // add compensation so layout width doesn’t change
+    if (scrollBarWidth > 0) style.paddingRight = `${scrollBarWidth}px`;
+
+    return () => {
+      style.overflow = prevOverflow;
+      style.paddingRight = prevPaddingRight;
+    };
+  }, [isModalOpen]);
 
   const handlePrevImage = () => {
     setCurrentImageIndex((prev) => (prev === 0 ? project.gallery.length - 1 : prev - 1))
@@ -297,12 +330,9 @@ function ProjectDetail() {
 
   return (
     <div className="project-detail-page">
-      <div className="decorative-backgrounds">
-        <img 
-          src="https://api.builder.io/api/v1/image/assets/TEMP/749e8bb56e07407988bd87c97087e5653a235d52?width=4446" 
-          alt="" 
-          className="bg-element bg-project-detail" 
-        />
+      {/* Backgrounds */}
+      <div className="bg-layer bg-a" aria-hidden="true">
+        <img src={bg} alt="" loading="lazy" />
       </div>
 
       <nav className="top-bar-project-detail">
@@ -397,7 +427,7 @@ function ProjectDetail() {
           <div className="project-info">
             <h1 className="project-detail-title">{project.title}</h1>
             <p className="project-description">{project.description}</p>
-            
+            <hr />
             <div className="project-location">
               <span className="location-label">ĐỊA ĐIỂM</span>
               <p className="location-text">{project.location}</p>

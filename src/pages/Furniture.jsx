@@ -9,6 +9,8 @@ import furnitureHero from '../assets/img/Furniture/dinner-room-japanese-style-wi
 import furniture from '../assets/img/Furniture/furniture.png'
 import diningTable from '../assets/img/Furniture/dining-table-setting-restaurant.jpg'
 
+import bg from '../assets/img/Bg/bg5.png'
+import bg1 from '../assets/img/Bg/bg6.png'
 
 function Furniture() {
   const furnitureImages = Object.values(
@@ -51,17 +53,13 @@ function Furniture() {
 
   return (
     <div className="furniture-page">
-      <div className="decorative-backgrounds-furniture">
-        <img 
-          src="https://api.builder.io/api/v1/image/assets/TEMP/5a75bd0b42a39345f544752ace9c5e3228b2b385?width=6871" 
-          alt="" 
-          className="bg-element bg-furniture-1" 
-        />
-        <img 
-          src="https://api.builder.io/api/v1/image/assets/TEMP/dd4148fa6010392d74897d4bf21925c76a6483e6?width=5426" 
-          alt="" 
-          className="bg-element bg-furniture-2" 
-        />
+
+      <div className="bg-layer bg-a" aria-hidden="true">
+        <img src={bg} alt="" loading="lazy" />
+      </div>
+
+      <div className="bg-layer bg-b" aria-hidden="true">
+        <img src={bg1} alt="" loading="lazy" />
       </div>
 
       <nav className="top-bar-furniture">
@@ -163,7 +161,7 @@ function Furniture() {
       </section>
 
       <section className="design-construction-section">
-        <div className="section-text-content reverse">
+        <div className="section-text-content">
           <p className="section-description">
             Chúng tôi mang đến dịch vụ thiết kế và thi công nội thất trọn gói, bắt đầu từ khâu tư vấn ý tưởng, 
             lên bản vẽ chi tiết đến triển khai thực tế. Mỗi công trình đều được chăm chút để vừa đáp ứng công 
@@ -203,32 +201,6 @@ function Furniture() {
       </section>
 
       <section className="contact-section" id="contact">
-        <div className="contact-bg-wrapper">
-          <svg className="contact-gradient" width="1468" height="349" viewBox="0 0 1468 349" fill="none">
-            <mask id="mask0_291_1090" style={{ maskType: 'alpha' }} maskUnits="userSpaceOnUse" x="1" y="0" width="1468" height="349">
-              <path d="M1 348.063H1469V3.05176e-05L735 141.367L1 3.05176e-05V348.063Z" fill="#D9D9D9"/>
-            </mask>
-            <g mask="url(#mask0_291_1090)">
-              <g filter="url(#filter0_f_291_1090)">
-                <path d="M-80.5557 434.811H1551.57V243.109L735.51 315.344L-80.5557 243.109V434.811Z" fill="url(#paint0_linear_291_1090)"/>
-              </g>
-            </g>
-            <defs>
-              <filter id="filter0_f_291_1090" x="-248.556" y="75.108" width="1968.13" height="527.703" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-                <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                <feGaussianBlur stdDeviation="84" result="effect1_foregroundBlur_291_1090"/>
-              </filter>
-              <linearGradient id="paint0_linear_291_1090" x1="736.04" y1="365.354" x2="736.04" y2="215.326" gradientUnits="userSpaceOnUse">
-                <stop stopColor="white" stopOpacity="0.16"/>
-                <stop offset="1" stopColor="white" stopOpacity="0"/>
-              </linearGradient>
-            </defs>
-          </svg>
-          
-          <div className="contact-bg-overlay"></div>
-        </div>
-
         <h2 className="contact-title">LIÊN HỆ</h2>
         
         <div className="contact-content">

@@ -5,7 +5,7 @@ import BackToTopButton from '../components/BackToTopButton'
 import logoNgang from '../assets/img/Logo/logo ngang.png'
 import logoDoc from '../assets/img/logo/logoDoc.png'
 import balisaHotelImg from '../assets/img/Project/Hotel/Hotel.png'
-import penthouseMrQuangImg from '../assets/img/Project/Penthouse/penthouseMasteri (1).png'
+import penthouseMrQuangImg from '../assets/img/Project/mrquang/main.jpg'
 import estellaThumb from '../assets/img/Project/estella/estella (5).jpg'
 import apacThumb from '../assets/img/Project/apac/apac (4).jpg'
 import kienLongThumb from '../assets/img/Project/kien long/Bank (5).jpg'
@@ -13,17 +13,14 @@ import pizzaThumb from '../assets/img/Project/pizza/4p (2).jpg'
 import coffeeThumb from '../assets/img/Project/coffee/coffeeBmt (2).jpg'
 import penthouseMasteriThumb from '../assets/img/Project/Penthouse/penthouseMasteri (2).png'
 import phucLongThumb from '../assets/img/Project/phuclong/fucklong (1).png'
+import bg from '../assets/img/Bg/bg.png'
 
 function Projects() {
   return (
     <div className="projects-page">
       {/* Decorative Background */}
-      <div className="decorative-backgrounds">
-        <img 
-          src="https://api.builder.io/api/v1/image/assets/TEMP/fc1dc67ac140b5d79e4eeabb0ff605e4dbfeb93c?width=6871" 
-          alt="" 
-          className="bg-element bg-projects" 
-        />
+      <div className="bg-layer bg-a" aria-hidden="true">
+        <img src={bg} alt="" loading="lazy" />
       </div>
 
       {/* Navigation */}

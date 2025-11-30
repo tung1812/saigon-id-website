@@ -8,18 +8,7 @@
 }
 
 /* ===== Decorative Background ===== */
-.bg-about {
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: auto;
-  transform: rotate(-23.206deg);
-  opacity: 0.15;
-  border-radius: 40px;
-  pointer-events: none;
-  z-index: 0;
-}
+.about-page .bg-a {top: 150px; opacity: 15%;}
 
 /* ===== Navigation Bar ===== */
 .top-bar-about {
@@ -111,11 +100,13 @@
 
 /* ===== Mission, Values, Vision Section ===== */
 .mission-values-section {
-  position: relative;
-  z-index: 1;
-  padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 3vw, 2rem);
-  max-width: 1348px;
-  margin: 0 auto;
+  --gutter: clamp(16px, 3vw, 40px);
+
+  box-sizing: border-box;
+  margin-inline: calc(50% - 50vw);  /* escape any outer container */
+  width: 100vw;                      /* span the visual viewport */
+  padding: clamp(4rem, 8vw, 8rem) var(--gutter);  
+  max-width: none;                   
 }
 
 .section-main-title {
@@ -138,20 +129,21 @@
 .mission-values-grid {
   display: flex;
   flex-direction: column;
-  gap: clamp(3rem, 8vw, 346px);
+  gap: clamp(48px, 6vw, 80px);       /* a touch more breathing room between rows */
   margin-top: clamp(3rem, 6vw, 6rem);
 }
-
 .mission-value-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: clamp(2rem, 7vw, 100px);
-  max-width: 1005px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: none;        /* remove centering caps */
+  margin: 0;   
 }
 
 .mission-value-item:nth-child(1) {
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-start;       /* left-anchored */
 }
 
 .mission-value-item:nth-child(2) {
@@ -161,8 +153,8 @@
 }
 
 .mission-value-item:nth-child(3) {
-  justify-content: flex-start;
-  margin-left: 0;
+  flex-direction: row;
+  justify-content: flex-start;       /* left-anchored like row 1 */
 }
 
 .mission-value-card {
@@ -195,7 +187,7 @@
 .mission-icon {
   width: 74px;
   height: 74px;
-  flex-shrink: 0;
+  /* flex-shrink: 0; */
 }
 
 .mission-value-title {
@@ -218,7 +210,7 @@
 }
 
 /* ===== Factory Section ===== */
-.factory-section {
+.about-factory-section {
   position: relative;
   z-index: 1;
   padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 4vw, 2rem);
@@ -226,7 +218,7 @@
   margin: 0 auto;
 }
 
-.factory-content {
+.about-factory-content {
   display: flex;
   gap: clamp(3rem, 6vw, 6rem);
   align-items: center;
@@ -234,7 +226,7 @@
   flex-wrap: wrap;
 }
 
-.factory-image-container {
+.about-factory-image-container {
   flex: 1.2;
   min-width: min(100%, 500px);
   border-radius: 18px;
@@ -242,14 +234,14 @@
   padding: 0.75rem;
 }
 
-.factory-main-image {
+.about-factory-main-image {
   width: 100%;
   height: auto;
   border-radius: 12px;
   display: block;
 }
 
-.factory-text-content {
+.about-factory-text-content {
   flex: 1;
   min-width: min(100%, 400px);
   display: flex;
@@ -257,14 +249,14 @@
   gap: 2rem;
 }
 
-.factory-description {
+.about-factory-description {
   color: var(--color-white);
   font-size: clamp(1rem, 2vw, 1.5rem);
   font-weight: 500;
   line-height: 1.2;
 }
 
-.factory-link {
+.about-factory-link {
   color: var(--color-brown);
   font-size: clamp(1rem, 2vw, 1.5rem);
   font-weight: 500;
@@ -275,7 +267,7 @@
   transition: opacity 0.3s;
 }
 
-.factory-link:hover {
+.about-factory-link:hover {
   opacity: 0.7;
 }
 
@@ -283,19 +275,21 @@
 @media (max-width: 1024px) {
   .mission-value-item {
     flex-direction: column;
-    text-align: center;
+    text-align: left;
+    align-items: center;
   }
-
   .mission-value-item:nth-child(1),
   .mission-value-item:nth-child(2),
   .mission-value-item:nth-child(3) {
     justify-content: center;
     margin: 0 auto;
     max-width: 100%;
+    flex-direction: column;
   }
 
   .mission-value-description {
     text-align: center;
+    max-width: 60%;
   }
 }
 
@@ -334,8 +328,12 @@
   .mission-values-section {
     padding: 3rem 1rem;
   }
-
-  .factory-section {
+  .mission-value-item {
+    flex-direction: column;
+    text-align: left;
+    align-items: center;
+  }
+  .about-factory-section {
     padding: 3rem 1rem;
   }
 }

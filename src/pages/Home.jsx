@@ -1,7 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../App.css'
+
 import BackToTopButton from '../components/BackToTopButton'
+
+import bg from '../assets/img/Bg/bg.png'
+import bg1 from '../assets/img/Bg/bg1.png'
+import bg2 from '../assets/img/Bg/bg2.png'
 
 import logoNgang from '../assets/img/Logo/logo ngang.png'
 import logoDoc from '../assets/img/logo/logoDoc.png'
@@ -69,6 +74,17 @@ function Home() {
 
   return (
     <div className="app">
+      {/* Backgrounds */}
+      <div className="bg-layer bg-a" aria-hidden="true">
+        <img src={bg} alt="" loading="lazy" />
+      </div>
+      <div className="bg-layer bg-b" aria-hidden="true">
+        <img src={bg1} alt="" loading="lazy" />
+      </div>
+      <div className="bg-layer bg-c" aria-hidden="true">
+        <img src={bg2} alt="" loading="lazy" />
+      </div>
+
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-background">
@@ -116,27 +132,21 @@ function Home() {
         </nav>
       </section>
 
-      {/* Decorative Background Elements */}
-      <div className="decorative-backgrounds">
-        <img src="src\assets\img\Bg\elements.png" alt="" className="bg-element bg-4" />
-        <img src="src\assets\img\Bg\elements (1).png" alt="" className="bg-element bg-5" />
-        <img src="src\assets\img\Bg\Clip path group.png" alt="" className="bg-element bg-6" />
-      </div>
-
       {/* About Section */}
       <section className="about-section" id="about">
-        <div className="about-top-gradient"></div>
+        {/* <div className="about-top-gradient"></div> */}
 
         <div className="about-intro">
           <div className="section-badge about-badge">GIỚI THIỆU</div>
-
-          <p className="about-description">
-            CÔNG TY TNHH XÂY DỰNG VÀ KIẾN TRÚC SAIGON ID ( Viết tắt SID).
-            'ID' là viết tắt của Identity - bản sắc, 'ID' - Ý tưởng trong thiết kế, đồng thời cũng là Interior & Design ( thiết kế nội thất). Chúng tôi tin rằng mỗi ngôi nhà, mỗi tác phẩm đều xứng đáng có một 'ID' riêng - phản ánh đúng gu thẩm mỹ, lối sống và giá trị riêng. Bên cạnh thiết kế chúng tôi còn thi công trang trí nội - ngoại thất, sản xuất đồ gỗ.
-          </p>
+          <div className="about-copy">
+            <p className="about-description">
+              CÔNG TY TNHH XÂY DỰNG VÀ KIẾN TRÚC SAIGON ID ( Viết tắt SID).
+              'ID' là viết tắt của Identity - bản sắc, 'ID' - Ý tưởng trong thiết kế, đồng thời cũng là Interior & Design ( thiết kế nội thất). Chúng tôi tin rằng mỗi ngôi nhà, mỗi tác phẩm đều xứng đáng có một 'ID' riêng - phản ánh đúng gu thẩm mỹ, lối sống và giá trị riêng. Bên cạnh thiết kế chúng tôi còn thi công trang trí nội - ngoại thất, sản xuất đồ gỗ.
+            </p>
+            <Link to="/about" className="section-link about-link">VỀ CHÚNG TÔI</Link>
+          </div>
         </div>
 
-        <Link to="/about" className="section-link about-link">VỀ CHÚNG TÔI</Link>
 
         {/* Stats Grid */}
         <div className="stats-grid">
@@ -215,12 +225,18 @@ function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="services-section" id="services">
-        <div className="section-badge">DỊCH VỤ</div>
-        
+      <section className="services-section" id="services">   
         <div className="services-header">
-          <h2 className="services-title">DỊCH VỤ<br />CỦA CHÚNG TÔI</h2>
-          <a href="#services" className="section-link">TẤT CẢ DỊCH VỤ</a>
+          <div className="services-header-grid">
+            <div className="section-badge">DỊCH VỤ</div>
+
+            <h2 className="services-title">
+              <div className="line1">DỊCH VỤ</div>
+              <div className="line2">CỦA CHÚNG TÔI</div>
+            </h2>
+          </div>
+
+          <Link to="/furniture" className="section-link">TẤT CẢ DỊCH VỤ</Link>
         </div>
 
         <div className="services-grid">
@@ -260,49 +276,73 @@ function Home() {
 
       {/* Projects Section */}
       <section className="projects-section" id="projects">
-        <div className="section-badge projects-badge">DỰ ÁN</div>
-
         <div className="projects-header">
-          <h2 className="projects-title">dự án<br />TIÊU BIỂU</h2>
+          <div className="projects-header-grid">
+            <div className="section-badge projects-badge">DỰ ÁN</div>
+
+            <h2 className="projects-title">
+              <div className="line1">DỰ ÁN</div>
+              <div className="line2">TIÊU BIỂU</div>
+            </h2>
+          </div>
+
           <Link to="/projects" className="section-link projects-link">TẤT CẢ DỰ ÁN</Link>
         </div>
 
         <div className="projects-grid">
-          <div className="project-card large pos-a">
-            <div className="project-card-wrapper">  {/* was only project-media */}
-              <img src={home2} alt="Office Eximbank" />
-              <h3 className="project-title">OFFICE EXIMBANK - DISTRICT 1</h3>
+          {/* Row 1: Large left, Small right (edge to edge) */}
+          <div className="projects-row row-1">
+            <div className="home-project-card large">
+              <div className="project-card-wrapper">
+                <div className='project-media'>
+                  <img src={home2} alt="Office Eximbank" />
+                </div>
+                <h3 className="home-project-title">OFFICE EXIMBANK - DISTRICT 1</h3>
+              </div>
+            </div>
+            <div className="home-project-card small">
+              <div className="project-card-wrapper">
+                <div className='project-media'>
+                  <img src={home1} alt="Office KSF Bank" />
+                </div>
+                <h3 className="home-project-title">OFFICE KSF BANK - DISTRICT 2</h3>
+              </div>
             </div>
           </div>
 
-          <div className="project-card small pos-b">
-            <div className="project-card-wrapper">
-              <img src={home1} alt="Office KSF Bank" />
-              <h3 className="project-title">OFFICE KSF BANK - DISTRICT 2</h3>
+          {/* Row 2: one Large centered */}
+          <div className="projects-row row-2 center">
+            <div className="home-project-card large">
+              <div className="project-card-wrapper">
+                <div className='project-media'>
+                  <img src={home3} alt="Penthouse" />
+                </div>
+                <h3 className="home-project-title">PENTHOUSE MR QUANG MUSICIAN</h3>
+              </div>
             </div>
           </div>
 
-          <div className="project-card large pos-c">
-            <div className="project-card-wrapper">
-              <img src={home3} alt="Penthouse" />
-              <h3 className="project-title">PENTHOUSE MR QUANG MUSICIAN</h3>
+          {/* Row 3: Small left, Large right (edge to edge) */}
+          <div className="projects-row row-3">
+            <div className="home-project-card small">
+              <div className="project-card-wrapper">
+                <div className='project-media'>
+                  <img src={home5} alt="Townhouse" />
+                </div>
+                <h3 className="home-project-title">TOWNHOUSE - LONG AN PROVINCE</h3>
+              </div>
             </div>
-          </div>
-
-          <div className="project-card small pos-d">
-            <div className="project-card-wrapper">
-              <img src={home5} alt="Townhouse" />
-              <h3 className="project-title">TOWNHOUSE - LONG AN PROVINCE</h3>
-            </div>
-          </div>
-
-          <div className="project-card large pos-e">
-            <div className="project-card-wrapper">
-              <img src={home4} alt="Phúc Long" />
-              <h3 className="project-title">PHÚC LONG TEA & COFFEE</h3>
+            <div className="home-project-card large">
+              <div className="project-card-wrapper">
+                <div className='project-media'>
+                  <img src={home4} alt="Phúc Long" />
+                </div>
+                <h3 className="home-project-title">PHÚC LONG TEA & COFFEE</h3>
+              </div>
             </div>
           </div>
         </div>
+
 
 
       </section>

@@ -8,18 +8,7 @@
 }
 
 /* ===== Decorative Background ===== */
-.bg-projects {
-  position: fixed;
-  top: -40%;
-  left: -60%;
-  width: 200%;
-  height: auto;
-  transform: rotate(-22.212deg);
-  opacity: 0.15;
-  border-radius: 40px;
-  pointer-events: none;
-  z-index: 0;
-}
+.projects-page .bg-a {top: 150px; opacity: 15%;}
 
 /* ===== Navigation Bar ===== */
 .top-bar-projects {
@@ -78,7 +67,7 @@
   gap: 1.5rem;
   padding: 0.625rem 0.625rem 1.5rem;
   border-radius: 22px;
-  background: var(--color-gray-card);
+  background: #191919;
   transition: transform 0.3s, box-shadow 0.3s;
   flex: 1;
   min-width: min(100%, 280px);

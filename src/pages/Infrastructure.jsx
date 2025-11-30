@@ -14,22 +14,19 @@ import paint1 from '../assets/img/Infrastructure/son 1.png'
 import paint2 from '../assets/img/Infrastructure/son 2.png'
 import paint3 from '../assets/img/Infrastructure/son 3.jpg'
 import paint4 from '../assets/img/Infrastructure/son 4.jpg'
+import bg from '../assets/img/Bg/bg.png'
+import bg1 from '../assets/img/Bg/bg2.png'
 
 function Infrastructure() {
   return (
     <div className="infrastructure-page">
-      <div className="decorative-backgrounds-infrastructure">
-        <img 
-          src="https://api.builder.io/api/v1/image/assets/TEMP/8e0488de9fe0ccfdcba02d098cd0c1a319c1aa8d?width=6871" 
-          alt="" 
-          className="bg-element bg-infra-1" 
-        />
-        <img 
-          src="https://api.builder.io/api/v1/image/assets/TEMP/2b130fe1cf67014cb1606a4d4505178cb52eeba7?width=4411" 
-          alt="" 
-          className="bg-element bg-infra-2" 
-        />
+      <div className="bg-layer bg-a" aria-hidden="true">
+        <img src={bg} alt="" loading="lazy" />
       </div>
+
+      <div className="bg-layer bg-b" aria-hidden="true">
+        <img src={bg1} alt="" loading="lazy" />
+      </div>     
 
       <nav className="top-bar-infrastructure">
         <div className="nav-gradient-overlay"></div>
@@ -81,12 +78,12 @@ function Infrastructure() {
           <h2 className="factory-section-title">nhà máy sản xuất</h2>
           <p className="factory-section-description">
             Để tạo ra những sản phẩm với chất lượng 
-tốt nhất, công ty chúng tôi luôn áp dụng quy trình nghiêm ngặt ở từng giai đoạn. Từ khâu chọn lựa nguyên liệu, xử lý đến khi hoàn thiện thành phẩm, mọi bước đều được thực hiện cẩn thận và 
-chỉn chu, đảm bảo sản phẩm đạt chuẩn kỹ thuật và chất lượng cao nhất.
-<br /><br />
-Với diện tích nhà máy 900m2, chúng tôi đã đầu tư hệ thống máy móc sản xuất, máy chế biến gỗ 
-đáp ứng hầu hết những yêu cầu khắc khe và
-số lượng đơn hàng của khách hàng.
+            tốt nhất, công ty chúng tôi luôn áp dụng quy trình nghiêm ngặt ở từng giai đoạn. Từ khâu chọn lựa nguyên liệu, xử lý đến khi hoàn thiện thành phẩm, mọi bước đều được thực hiện cẩn thận và 
+            chỉn chu, đảm bảo sản phẩm đạt chuẩn kỹ thuật và chất lượng cao nhất.
+            <br /><br />
+            Với diện tích nhà máy 900m2, chúng tôi đã đầu tư hệ thống máy móc sản xuất, máy chế biến gỗ 
+            đáp ứng hầu hết những yêu cầu khắc khe và
+            số lượng đơn hàng của khách hàng.
           </p>
         </div>
 
@@ -142,31 +139,6 @@ số lượng đơn hàng của khách hàng.
       </section>
 
       <section className="contact-section" id="contact">
-        <div className="contact-bg-wrapper">
-          <svg className="contact-gradient" width="1468" height="349" viewBox="0 0 1468 349" fill="none">
-            <mask id="mask0_291_1348" style={{ maskType: 'alpha' }} maskUnits="userSpaceOnUse" x="0" y="0" width="1468" height="349">
-              <path d="M0 348.063H1468V3.05176e-05L734 141.367L0 3.05176e-05V348.063Z" fill="#D9D9D9"/>
-            </mask>
-            <g mask="url(#mask0_291_1348)">
-              <g filter="url(#filter0_f_291_1348)">
-                <path d="M-81.5557 434.809H1550.57V243.107L734.51 315.342L-81.5557 243.107V434.809Z" fill="url(#paint0_linear_291_1348)"/>
-              </g>
-            </g>
-            <defs>
-              <filter id="filter0_f_291_1348" x="-249.556" y="75.106" width="1968.13" height="527.703" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-                <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                <feGaussianBlur stdDeviation="84" result="effect1_foregroundBlur_291_1348"/>
-              </filter>
-              <linearGradient id="paint0_linear_291_1348" x1="735.04" y1="365.352" x2="735.04" y2="215.324" gradientUnits="userSpaceOnUse">
-                <stop stopColor="white" stopOpacity="0.16"/>
-                <stop offset="1" stopColor="white" stopOpacity="0"/>
-              </linearGradient>
-            </defs>
-          </svg>
-          
-          <div className="contact-bg-overlay"></div>
-        </div>
 
         <h2 className="contact-title">liên hệ</h2>
         
