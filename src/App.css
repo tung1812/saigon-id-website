@@ -14,6 +14,7 @@
   --wS: 500px;   /* small card width  */
   --gap: clamp(16px, 2vw, 24px);
   --gutter: clamp(16px, 3vw, 40px);
+  --col2-content-nudge: 7rem; /* try 0.5px, 1px, 1.5px, etc. */
   --gradient-fade: linear-gradient(180deg, #000 -31.12%, rgba(0, 0, 0, 0.00) 99.98%);
   --gradient-text: linear-gradient(180deg, #FFF 20.27%, rgba(255, 255, 255, 0.00) 114.59%);
 }
@@ -66,6 +67,27 @@
   max-height: 1200px;
   overflow: hidden;
   z-index: 1;
+  isolation: isolate;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;                              /* ends at hero bottom */
+  height: clamp(120px, 22vh, 320px);      /* fade thickness */
+
+  /* transparent at the start of the fade, black at the bottom edge */
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0.6) 60%,
+    rgba(0,0,0,1) 100%
+  );
+
+  pointer-events: none;
+  z-index: 3;                              /* above hero image/overlay, below nav */
 }
 
 .hero-background {
@@ -106,11 +128,15 @@
   position: relative;
   z-index: 10;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 2rem clamp(1rem, 5vw, 4rem);
   gap: 2rem;
   flex-wrap: wrap;
+}
+
+.top-bar .nav-actions {
+  margin-left: auto;
 }
 
 .logo {
@@ -122,9 +148,9 @@
   display: flex;
   gap: clamp(1.5rem, 5vw, 5.9rem);
   list-style: none;
-  align-items: center;
-  flex: 1;
-  justify-content: center;
+  align-items: right;
+  margin-left: 18rem;
+  margin-right: 0rem;
 }
 
 .nav-menu a {
@@ -846,22 +872,7 @@
   margin-top: -2rem;
 }
 
-.social-icons a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.2s, opacity 0.2s;
-}
 
-.social-icons a:hover {
-  transform: scale(1.1);
-  opacity: 0.8;
-}
-
-.social-icons svg {
-  width: clamp(28px, 5vw, 36px);
-  height: auto;
-}
 
 .contact-thanks {
   color: var(--color-white);
@@ -870,8 +881,6 @@
   line-height: 1.3;
   letter-spacing: -0.48px;
   max-width: 751px;
-  margin: clamp(2rem, 1vw, 3rem) auto 0;
-  text-align: center;
   background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 132.14%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -909,6 +918,60 @@
   opacity: 0.8;
 }
 
+/* Rows grid */
+/* === Contact grid: 3 columns: left | right | icons === */
+.contact-grid{
+  display: grid;
+  grid-template-columns: minmax(260px, var(--col1, 1fr)) minmax(0,1fr) 48px;
+  column-gap: clamp(2rem, 5vw, 7rem);
+  row-gap: clamp(1.5rem, 3vw, 2rem);
+}
+
+/* Each “row” uses display: contents so its 3 children drop directly
+   into the parent grid’s 3 columns. */
+.contact-row{ display: contents; }
+
+/* Usual item styles */
+.contact-item{ display:flex; flex-direction:column; gap:.5rem; }
+.contact-text--narrow{ max-width:36ch; word-break:break-word; }
+
+/* Icons column */
+.contact-icon{ display:flex; align-items:center; justify-content:flex-start; transition: transform 0.2s, opacity 0.2s;}
+.contact-icon img{ width:40px; height:40px; }
+
+.contact-icon img:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+
+.contact-thanks, .middle-collumn {
+  transform: translateX(var(--col2-content-nudge));
+}
+
+/* “Thanks” must live in column 2 */
+.contact-thanks{
+  grid-column: 2;
+  margin: 0;            /* kill default p margins */
+  margin-top: clamp(1rem, 2vw, 1.5rem);
+  padding: 0;           /* ensure no inner padding */
+  text-indent: 0;       /* in case a global indent is applied to p */
+  white-space: normal;  /* avoid any non-standard spacing */
+  text-align: left;
+  max-width: 60ch;      /* optional for nicer line length */        /* optional: tidy text width */
+}
+
+
+
+/* Make the title share the same page width so measurement is correct */
+.contact-title{
+  max-width: 1408px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4vw, 1.875rem);
+}
+
+
 @keyframes lang-fade-in {
   from { opacity: 0; transform: translateY(4px); }
   to   { opacity: 1; transform: translateY(0);   }
@@ -934,9 +997,17 @@
   display: block;
 }
 
+.social-icons img {
+  height: 40px;
+  width: 40px;
+}
+
 /* ===== Responsive Breakpoints ===== */
-
-
+@media (max-width: 1432px) {
+    .nav-menu{
+    margin-left: 5rem;
+  }
+}
 @media (max-width: 1200px) {
   .stats-grid {
     grid-template-columns: repeat(2, minmax(320px, 1fr));
@@ -963,13 +1034,21 @@
   /* keep row-2 centered single card */
   .projects-row.center{ justify-content: center; }
   .clients-carousel { --speed: 10s; }
-}
 
-@media (max-width: 768px) {
+  .nav-menu{
+    margin-left: 3rem;
+  }
+}
+@media (max-width: 871px) {
   .hamburger-menu {
     display: flex;
   }
-
+  .services-title .line1,
+  .services-title .line2,
+  .projects-title .line1,
+  .projects-title .line2 {
+    transform: none !important;   /* kills translateX(...) */
+  }
   .nav-menu {
     position: absolute;
     top: 100%;
@@ -1001,6 +1080,35 @@
     padding: 1.5rem 1rem;
     position: relative;
   }
+
+  .contact-grid{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 3vw, 1.25rem);
+  }
+
+
+  /* Order by column */
+  .contact-grid  .col1 { order: 1; }
+  .contact-grid  .col2 { order: 2; }
+  .contact-grid  .col3 { order: 3; }
+
+  /* Make sure the thanks paragraph stays with column 2 */
+  .contact-thanks { order: 2; margin-top: .5rem; max-width: 60ch; }
+
+  /* Optional: hide icons on mobile, or keep them last */
+  /* .contact-grid > .col3 { display: none; } */
+
+  /* Kill the desktop nudge on mobile */
+  :root{ --col2-content-nudge: 0; }
+  .middle-collumn, .contact-thanks { transform: none; }
+}
+
+
+
+@media (max-width: 768px) {
+
+
 
   .about-intro {
     flex-direction: column;
@@ -1042,7 +1150,7 @@
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 871px) {
   .hamburger-menu {
     display: none !important;
   }

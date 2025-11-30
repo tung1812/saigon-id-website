@@ -90,6 +90,7 @@ function Home() {
         </div>
 
         <Header />
+        {/* <div className="section-fader" aria-hidden="true" /> */}
       </section>
 
       {/* About Section */}

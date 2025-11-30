@@ -11,7 +11,7 @@ export default function FadeOnLangChange({ children, className = "", duration = 
     <div
       key={i18n.language}                       // remount on lang change
       className={`lang-fade ${className}`}
-      style={{ animationDuration: `${duration}ms` }}
+      style={{ animationDuration: `${duration}ms`, display: 'contents' }}
     >
       {children}
     </div>
