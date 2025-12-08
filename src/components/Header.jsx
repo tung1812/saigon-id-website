@@ -1,5 +1,5 @@
 // src/components/Header.jsx
-import { useState } from "react";
+import { useState, useLayoutEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import FadeOnLangChange from "./FadeOnLangChange";
@@ -24,55 +24,76 @@ export default function Header() {
     i18n.changeLanguage(nextLang);
   };
 
+  const ref = useRef(null);
+
+  useLayoutEffect(() => {
+    const setH = () => {
+      const h = ref.current?.offsetHeight ?? 72;
+      document.documentElement.style.setProperty('--header-h', `${h}px`);
+    };
+    setH();
+    window.addEventListener('resize', setH);
+    return () => window.removeEventListener('resize', setH);
+  }, []);
+  
   return (
-    <nav className="top-bar">
+    <nav ref={ref} className="top-bar">
       <Link to="/" aria-label={t("nav.home_aria")} className="logo-link">
         <img src={logoNgang} alt={t("common.logo_alt")} className="logo" />
       </Link>
 
-      {/* Fade the nav labels on language change */}
-      <FadeOnLangChange>
-        <ul className={`nav-menu ${isMenuOpen ? "mobile-menu-open" : ""}`}>
-          <li>
-            <Link
-              to="/about"
-              onClick={closeMenu}
-              aria-current={pathname === "/about" ? "page" : undefined}
-            >
-              {t("nav.about")}
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/projects"
-              onClick={closeMenu}
-              aria-current={pathname === "/projects" ? "page" : undefined}
-            >
-              {t("nav.projects")}
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/furniture"
-              onClick={closeMenu}
-              aria-current={pathname === "/furniture" ? "page" : undefined}
-            >
-              {t("nav.furniture")}
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/infrastructure"
-              onClick={closeMenu}
-              aria-current={pathname === "/infrastructure" ? "page" : undefined}
-            >
-              {t("nav.infrastructure")}
-            </Link>
-          </li>
-        </ul>
-      </FadeOnLangChange>
-
       <div className="nav-actions">
+        {/* Fade the nav labels on language change */}
+        <FadeOnLangChange>
+          <ul className={`nav-menu ${isMenuOpen ? "mobile-menu-open" : ""}`}>
+            <li>
+              <Link
+                to="/"
+                onClick={closeMenu}
+                aria-current={pathname === "/" ? "page" : undefined}
+              >
+                {t("nav.home")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/about"
+                onClick={closeMenu}
+                aria-current={pathname === "/about" ? "page" : undefined}
+              >
+                {t("nav.about")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/projects"
+                onClick={closeMenu}
+                aria-current={pathname === "/projects" ? "page" : undefined}
+              >
+                {t("nav.projects")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/furniture"
+                onClick={closeMenu}
+                aria-current={pathname === "/furniture" ? "page" : undefined}
+              >
+                {t("nav.furniture")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/infrastructure"
+                onClick={closeMenu}
+                aria-current={pathname === "/infrastructure" ? "page" : undefined}
+              >
+                {t("nav.infrastructure")}
+              </Link>
+            </li>
+          </ul>
+        </FadeOnLangChange>
+
         {/* Language image that fades on change */}
         <button
           type="button"
@@ -86,7 +107,7 @@ export default function Header() {
             <img
               key={nextLang}
               className="lang-button"
-              src={imgFor(nextLang)}   // show target language icon
+              src={imgFor(nextLang)}
               alt=""
             />
           </FadeOnLangChange>

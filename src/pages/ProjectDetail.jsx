@@ -14,8 +14,7 @@ import hotel3 from '../assets/img/Project/Hotel/Hotel (3).png'
 import hotel4 from '../assets/img/Project/Hotel/Hotel (4).png'
 import hotel5 from '../assets/img/Project/Hotel/Hotel (5).png'
 import hotel6 from '../assets/img/Project/Hotel/Hotel (6).png'
-import hotel7 from '../assets/img/Project/Hotel/Hotel (7).png'
-import hotel8 from '../assets/img/Project/Hotel/Hotel (8).png'
+
 
 // Penthouse MR Quang (using Penthouse folder)
 import penthouseMrQuangMain from '../assets/img/Project/mrquang/main.jpg'
@@ -45,6 +44,7 @@ import estella9 from '../assets/img/Project/estella/estella (10).jpg'
 import estella10 from '../assets/img/Project/estella/estella (11).jpg'
 import estella11 from '../assets/img/Project/estella/estella (12).jpg'
 import estella12 from '../assets/img/Project/estella/estella (13).jpg'
+import estella13 from '../assets/img/Project/estella/estella.png'
 
 // APAC Mandala Images
 import apacMain from '../assets/img/Project/apac/apac (4).jpg'
@@ -119,8 +119,6 @@ const projectsData = {
       hotel4,
       hotel5,
       hotel6,
-      hotel7,
-      hotel8,
     ],
   },
   'penthouse-mr-quang': {
@@ -162,6 +160,7 @@ const projectsData = {
       estella10,
       estella11,
       estella12,
+      estella13,
     ],
   },
   'apec-mandala': {
@@ -314,9 +313,9 @@ function ProjectDetail() {
     setCurrentImageIndex(index)
   }
 
-  const openModal = () => {
+  const openModal = (startIndex) => {
+    setModalImageIndex(Number(startIndex) || 0)
     setIsModalOpen(true)
-    setModalImageIndex(visibleThumbnails)
   }
 
   const closeModal = () => {
@@ -342,8 +341,10 @@ function ProjectDetail() {
   return (
     <div className="project-detail-page">
       {/* Backgrounds */}
-      <div className="bg-layer bg-a" aria-hidden="true">
-        <img src={bg} alt="" loading="lazy" />
+      <div className="bg-shelf" aria-hidden="true">
+        <div className="bg-layer bg-a" aria-hidden="true">
+          <img src={bg} alt="" loading="lazy" />
+        </div>
       </div>
 
       <Header />
@@ -359,11 +360,17 @@ function ProjectDetail() {
                 </svg>
               </button>
               
-              <img 
-                src={project.gallery[currentImageIndex]} 
-                alt={`${project.title} - ${t("project_detail.labels.image_alt_prefix")} ${currentImageIndex + 1}`}
-                className="main-gallery-image"
-              />
+              <button
+                className="main-image-btn"
+                onClick={() => openModal(currentImageIndex)}
+                aria-label={t("project_detail.a11y.open_gallery")}
+              >
+                <img
+                  src={project.gallery[currentImageIndex]}
+                  alt={`${project.title} - ${t("project_detail.labels.image_alt_prefix")} ${currentImageIndex + 1}`}
+                  className="main-gallery-image"
+                />
+              </button>
               
               <button className="gallery-nav-btn next-btn" onClick={handleNextImage} aria-label={t("project_detail.a11y.main_image_next")}>
                 <svg width="38" height="36" viewBox="0 0 38 36" fill="none">
@@ -387,7 +394,7 @@ function ProjectDetail() {
               {project.gallery.length > visibleThumbnails && (
                 <button
                   className="thumbnail more-images"
-                  onClick={openModal}
+                  onClick={() => openModal(visibleThumbnails)}
                   aria-label={t("project_detail.a11y.open_gallery")}
                 >
                   <img src={project.gallery[visibleThumbnails]} alt="More images" />

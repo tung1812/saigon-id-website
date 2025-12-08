@@ -1,0 +1,91 @@
+/* ===== Scroll Animations ===== */
+
+/* Animation keyframes */
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Base state for animated elements - hidden by default */
+[data-animation] {
+  opacity: 0;
+  transition: none;
+}
+
+[data-animation="fade"] {
+  transform: translate(0, 0);
+}
+
+[data-animation="slide-left"] {
+  transform: translateX(-60px);
+}
+
+[data-animation="slide-right"] {
+  transform: translateX(60px);
+}
+
+/* Animation application - triggered by class addition */
+.animate-in {
+  animation-fill-mode: forwards;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+}
+
+.animate-in.animate-fade {
+  animation-name: fadeInAnimation;
+}
+
+.animate-in.animate-slide-left {
+  animation-name: slideInFromLeft;
+}
+
+.animate-in.animate-slide-right {
+  animation-name: slideInFromRight;
+}
+
+/* Stagger effect for multiple elements in sequence */
+.stagger-animation {
+  --stagger-delay: 0.1s;
+}
+
+.stagger-animation > * {
+  animation-delay: calc(var(--stagger-delay) * var(--stagger-index, 0));
+}
+
+/* Add stagger index to children via CSS counter */
+.stagger-animation > :nth-child(1) { --stagger-index: 1; }
+.stagger-animation > :nth-child(2) { --stagger-index: 2; }
+.stagger-animation > :nth-child(3) { --stagger-index: 3; }
+.stagger-animation > :nth-child(4) { --stagger-index: 4; }
+.stagger-animation > :nth-child(5) { --stagger-index: 5; }
+.stagger-animation > :nth-child(6) { --stagger-index: 6; }
+.stagger-animation > :nth-child(7) { --stagger-index: 7; }
+.stagger-animation > :nth-child(8) { --stagger-index: 8; }
+.stagger-animation > :nth-child(9) { --stagger-index: 9; }
+.stagger-animation > :nth-child(10) { --stagger-index: 10; }

@@ -3,12 +3,13 @@
   background: var(--color-bg-dark);
   color: var(--color-white);
   position: relative;
-  min-height: 100vh;
+  min-height: auto;
   overflow-x: hidden;
+  padding-top: clamp(100px, 15vh, 180px);
 }
 
 /* ===== Decorative Background ===== */
-.projects-page .bg-a {top: 150px; opacity: 15%;}
+.projects-page .bg-a{ --y: 150px; --opacity: .15; }
 
 
 /* ===== All Projects Section ===== */

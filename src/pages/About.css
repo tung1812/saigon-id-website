@@ -3,12 +3,13 @@
   background: var(--color-bg-dark);
   color: var(--color-white);
   position: relative;
-  min-height: 100vh;
+  min-height: auto;
   overflow-x: hidden;
+  padding-top: clamp(100px, 15vh, 180px);
 }
 
 /* ===== Decorative Background ===== */
-.about-page .bg-a {top: 150px; opacity: 15%;}
+.about-page .bg-a{ --y: 150px; --opacity: .15; }
 
 
 /* ===== Hero Section ===== */
@@ -75,12 +76,19 @@
 /* ===== Mission, Values, Vision Section ===== */
 .mission-values-section {
   --gutter: clamp(16px, 3vw, 40px);
-
+  margin: 0 auto;
   box-sizing: border-box;
   margin-inline: calc(50% - 50vw);  /* escape any outer container */
   width: 100vw;                      /* span the visual viewport */
   padding: clamp(4rem, 8vw, 8rem) var(--gutter);  
   max-width: none;                   
+}
+
+.mission-value-inner {
+  /* hard-center the content, matching other sections’ gutters */
+  width: min(100%, 1468px);
+  margin-inline: auto;
+  padding-inline: clamp(1.5rem, 3vw, 2rem);
 }
 
 .section-main-title {

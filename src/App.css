@@ -14,6 +14,9 @@
   --wS: 500px;   /* small card width  */
   --gap: clamp(16px, 2vw, 24px);
   --gutter: clamp(16px, 3vw, 40px);
+  --header-h: clamp(60px, 9vw, 88px);
+  --container-pad: clamp(1.5rem, 3vw, 2rem);
+  --container-max: 1468px;
   --col2-content-nudge: 7rem; /* try 0.5px, 1px, 1.5px, etc. */
   --gradient-fade: linear-gradient(180deg, #000 -31.12%, rgba(0, 0, 0, 0.00) 99.98%);
   --gradient-text: linear-gradient(180deg, #FFF 20.27%, rgba(255, 255, 255, 0.00) 114.59%);
@@ -36,33 +39,44 @@
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   position: relative;
   overflow-x: clip;
+  display: flex;
+  flex-direction: column;
+  min-height: auto;
 }
 .app section{ position:relative; z-index:1; }
 
 /* ===== Decorative Backgrounds ===== */
+.bg-shelf{
+  position: absolute;   /* relative to the page root */
+  inset: 0;             /* cover the whole page */
+  overflow: clip;       /* or overflow: hidden; */
+  pointer-events: none; /* never block clicks */
+  z-index: 0;           /* behind content */
+}
+
 .bg-layer{
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;           /* touches both edges */
-  pointer-events: none;
-  z-index: 0;             /* behind content */
+  transform: translate(-50%, var(--y, 0)); /* vertical offset via var */
+  width: 100dvw;                            /* no scrollbar-width glitch */
 }
 
-.app .bg-layer img{
+.bg-layer img{
   width: 100%;
   height: auto;
   display: block;
+  opacity: var(--opacity, .15);
 }
 
 .app .bg-a{ top: 500px; opacity: 0.15;}
 .app .bg-b{ top: 2300px; opacity: 0.15;}
 .app .bg-c{ top: 5500px; opacity: 0.15;}
 
+
 /* ===== Hero Section ===== */
 .hero-section {
   position: relative;
-  height: 100vh;
+  height: 100svh;
   min-height: 600px;
   max-height: 1200px;
   overflow: hidden;
@@ -96,12 +110,14 @@
   left: 0;
   width: 100%;
   height: 100%;
+  inset: 0;
 }
 
 .hero-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   animation: fade-in-hero 0.8s ease-in-out;
 }
 
@@ -125,32 +141,46 @@
 
 /* ===== Navigation ===== */
 .top-bar {
-  position: relative;
-  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100000;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  padding: 2rem clamp(1rem, 5vw, 4rem);
-  gap: 2rem;
-  flex-wrap: wrap;
+  padding: clamp(0.75rem, 1.8vw, 1.25rem) clamp(0.75rem, 3.5vw, 2rem);
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  flex-wrap: nowrap;
+  background: rgba(13, 13, 13, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  isolation: isolate;
 }
 
 .top-bar .nav-actions {
-  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-left: 0;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .logo {
-  height: clamp(60px, 8vw, 89px);
+  height: clamp(44px, 6vw, 64px);
   width: auto;
+  flex-shrink: 0;
 }
 
 .nav-menu {
   display: flex;
   gap: clamp(1.5rem, 5vw, 5.9rem);
   list-style: none;
-  align-items: right;
-  margin-left: 18rem;
-  margin-right: 0rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 1;
 }
 
 .nav-menu a {
@@ -165,12 +195,6 @@
 
 .nav-menu a:hover {
   opacity: 0.7;
-}
-
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
 }
 
 .vi-flag {
@@ -596,8 +620,21 @@
   position: relative;
   z-index: 1;
   padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 3vw, 2rem);
+  /* max-width: 1468px; */
+  padding-inline: var(--container-pad);
+  max-width: var(--container-max);
+  margin-inline: auto;
+  /* margin: 0 auto; */
+}
+
+.projects-inner{
   max-width: 1468px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  padding-inline: clamp(1.5rem, 3vw, 2rem);
+}
+
+.projects-header { 
+  margin-bottom: clamp(3rem, 6vw, 6rem);
 }
 
 .projects-header-grid{
@@ -607,9 +644,7 @@
   align-items:center;
   width:100%;
 }
-
-.projects-badge {
-  /* margin-bottom: clamp(2rem, 4vw, 4rem); */
+.projects-header-grid .section-badge{ 
   grid-column:1;
   grid-row:1;
   justify-self:start;
@@ -617,20 +652,9 @@
   margin-top: 15px;
   margin-bottom: 0; 
 }
-
-/* .projects-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: clamp(1.5rem, 2.5vw, 33px);
-  margin-bottom: clamp(3rem, 5vw, 5rem);
-  max-width: 590px;
-  margin-left: auto;
-  margin-right: auto;
-} */
-
 .projects-title {
   --indent: clamp(8px, 7vw, 10rem);
+  padding-left: var(--indent);
   grid-column:2;
   grid-row:1 / span 2;
   margin:0;
@@ -653,8 +677,12 @@
   background-clip:text;
 }
 
-.projects-title .line1{ transform: translateX(calc(-1 * var(--indent))); padding-bottom: 10px;}
-.projects-title .line2{ transform: translateX(var(--indent)); padding-top: 10px;}
+.projects-title .line1{ transform: translateX(calc(-1 * var(--indent))); }
+.projects-title .line2{ transform: translateX(var(--indent)); }
+
+
+
+
 
 .projects-link {
   display: block;
@@ -665,9 +693,10 @@
 /* Full-bleed container; each row manages its own layout */
 .projects-grid{
   box-sizing: border-box;
-  margin-inline: calc(50% - 50vw);
-  width: 100vw;
-  padding-inline: var(--gutter);
+  margin-inline: auto !important;   /* cancel calc(50% - 50vw) */
+  width: 100% !important;           /* cancel width: 100vw     */
+  padding-inline: 0;                /* section already has pad */
+  max-width: 100%;   
   display: grid;
   row-gap: clamp(32px, 4vw, 64px); /* bigger vertical space between rows */
 }
@@ -922,7 +951,7 @@
 /* === Contact grid: 3 columns: left | right | icons === */
 .contact-grid{
   display: grid;
-  grid-template-columns: minmax(260px, var(--col1, 1fr)) minmax(0,1fr) 48px;
+  grid-template-columns: minmax(360px, var(--col1, 1fr)) minmax(0,1fr) 48px;
   column-gap: clamp(2rem, 5vw, 7rem);
   row-gap: clamp(1.5rem, 3vw, 2rem);
 }
@@ -989,6 +1018,10 @@
   border: 0;
   background: transparent;
   cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .lang-button {
@@ -1035,59 +1068,81 @@
   .projects-row.center{ justify-content: center; }
   .clients-carousel { --speed: 10s; }
 
-  .nav-menu{
+
+  /* .nav-menu{
     margin-left: 3rem;
-  }
-}
-@media (max-width: 871px) {
-  .hamburger-menu {
-    display: flex;
-  }
-  .services-title .line1,
-  .services-title .line2,
-  .projects-title .line1,
-  .projects-title .line2 {
-    transform: none !important;   /* kills translateX(...) */
-  }
-  .nav-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--color-bg-dark);
-    flex-direction: column;
-    gap: 0;
-    padding: 1rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    display: none;
-  }
-
-  .nav-menu.mobile-menu-open {
-    display: flex;
-  }
-
-  .nav-menu li {
-    width: 100%;
-    padding: 1rem 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .nav-menu a {
-    display: block;
-  }
-
-  .top-bar {
-    padding: 1.5rem 1rem;
-    position: relative;
-  }
-
-  .contact-grid{
+  } */
+    .contact-grid{
     display: flex;
     flex-direction: column;
     gap: clamp(1rem, 3vw, 1.25rem);
   }
 
+  :root{
+    --menu-row-h: clamp(56px, 7vw, 72px);
+    --menu-pad-x: clamp(16px, 6vw, 32px);
+    --menu-sep: rgba(255,255,255,.08);
+  }
 
+  .hamburger-menu { display:flex; padding: 0.4rem;}
+  .lang-btn       { display:flex !important; }
+
+  /* Make the menu a viewport overlay that starts under the header */
+  .nav-menu{
+    position: fixed;                /* escape any section clipping */
+    top: var(--header-h);
+    left: 0; right: 0;
+    width: 100vw;                   /* ignore parent padding */
+    max-height: calc(100vh - var(--header-h));
+    overflow: auto;
+
+    display: none;                  /* toggled by JS */
+    flex-direction: column;
+    gap: 0;
+
+    background: rgba(13,13,13,.92);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    z-index: 99999;
+    margin: 0; padding: 0;
+    transform: translateZ(0);       /* avoid sub-pixel seams */
+  }
+  .nav-menu.mobile-menu-open{ display:flex; }
+
+  /* Zero out li; all control lives on <a> so rows are identical */
+  .nav-menu li{ list-style:none; margin:0; padding:0; border:0; }
+
+  /* Perfectly even rows + centered text */
+  .nav-menu a{
+    display:flex;
+    align-items:center;             /* vertical centering */
+    justify-content:center;         /* horizontal centering */
+    min-height: var(--menu-row-h);
+    width: 100%;
+    padding: 0 var(--menu-pad-x);
+    text-decoration:none;
+    color: var(--color-white);
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.3px;
+
+    border-top: 1px solid var(--menu-sep);   /* single separator per row */
+  }
+  .nav-menu li:first-child a{ border-top:none; }
+  .nav-menu li:last-child  a{ border-bottom:1px solid var(--menu-sep); }
+
+  .top-bar {
+    padding: 0.75rem 1rem;
+    /* position: relative; */
+  }
+
+  .top-bar .nav-actions {
+    /* position: relative; */
+    flex-shrink: 1;
+    min-width: 0;
+    gap: 1rem;
+    justify-content: flex-end;
+  }
   /* Order by column */
   .contact-grid  .col1 { order: 1; }
   .contact-grid  .col2 { order: 2; }
@@ -1103,11 +1158,48 @@
   :root{ --col2-content-nudge: 0; }
   .middle-collumn, .contact-thanks { transform: none; }
 }
+@media (max-width: 871px) {
+
+  .services-title .line1,
+  .services-title .line2,
+  .projects-title .line1,
+  .projects-title .line2 {
+    transform: none !important;   /* kills translateX(...) */
+  }
+ 
+
+
+}
 
 
 
 @media (max-width: 768px) {
 
+  .hero-section {
+    height: auto;
+    max-height: none;
+    min-height: clamp(320px, 52dvh, 560px);
+    overflow: hidden;           /* keep the hero tidy */
+  }
+
+  /* Keep the image layer out of the flow so it never pushes the header */
+  .hero-background {
+    position: absolute;       
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 40%;
+  }
+
+  .hero-section::after {
+    height: clamp(64px, 12vh, 140px);
+  }
 
 
   .about-intro {
@@ -1150,22 +1242,18 @@
   }
 }
 
-@media (min-width: 871px) {
-  .hamburger-menu {
-    display: none !important;
-  }
-
-  .nav-menu {
+@media (min-width: 1201px) {
+  .hamburger-menu{ display:none !important; }
+  .nav-menu{
     position: static !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
+    width: auto !important;
     background: none !important;
     display: flex !important;
     flex-direction: row !important;
     padding: 0 !important;
     border-top: none !important;
-    gap: clamp(1.5rem, 5vw, 5.9rem) !important;
+    gap: clamp(1.5rem,5vw,5.9rem) !important;
+    z-index: auto;
   }
 
   .nav-menu li {
@@ -1173,7 +1261,13 @@
     padding: 0 !important;
     border-bottom: none !important;
   }
+  .nav-menu a{
+    font-size: clamp(0.85rem, 1.2vw, 1.05rem);
+  }
+
 }
+
+
 
 @media (max-width: 480px) {
   .hero-section {
@@ -1188,5 +1282,10 @@
   .footer {
     flex-direction: column;
     text-align: center;
+  }
+  .hero-section {
+    min-height: clamp(260px, 45dvh, 480px);
+    /* Or, if using aspect-ratio above, you can shorten further: */
+    /* aspect-ratio: 4 / 3; */
   }
 }

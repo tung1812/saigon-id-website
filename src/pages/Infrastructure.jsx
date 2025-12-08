@@ -1,6 +1,7 @@
 // src/pages/Infrastructure.jsx
 import { Link } from 'react-router-dom'
 import './Infrastructure.css'
+import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import Header from "../components/Header";
 import ContactFooter from "../components/ContactFooter";
 import BackToTopButton from '../components/BackToTopButton'
@@ -21,51 +22,55 @@ import bg1 from '../assets/img/Bg/bg2.png'
 
 function Infrastructure() {
   const { t } = useTranslation();
+  useScrollAnimation();
 
   return (
     <div className="infrastructure-page">
-      <div className="bg-layer bg-a" aria-hidden="true">
-        <img src={bg} alt={t("infrastructure.bg.a")} loading="lazy" />
-      </div>
+      <div className="bg-shelf" aria-hidden="true">
+        <div className="bg-layer bg-a" aria-hidden="true">
+          <img src={bg} alt={t("infrastructure.bg.a")} loading="lazy" />
+        </div>
 
-      <div className="bg-layer bg-b" aria-hidden="true">
-        <img src={bg1} alt={t("infrastructure.bg.b")} loading="lazy" />
-      </div>     
+        <div className="bg-layer bg-b" aria-hidden="true">
+          <img src={bg1} alt={t("infrastructure.bg.b")} loading="lazy" />
+        </div>    
+      </div>
+ 
 
       <Header />
 
       <section className="factory-production-section">
-        <div className="factory-hero-image">
-          <img 
+        <div className="factory-hero-image" data-animation="fade">
+          <img
             src={infraHero}
             alt={t("infrastructure.factory.hero_alt")}
           />
         </div>
 
-        <div className="factory-text-block">
+        <div className="factory-text-block" data-animation="fade">
           <h2 className="factory-section-title">{t("infrastructure.factory.title")}</h2>
           <p className="factory-section-description">
             {t("infrastructure.factory.description")}
           </p>
         </div>
 
-        <div className="factory-images-grid">
+        <div className="factory-images-grid stagger-animation">
           <div className="factory-row-3">
-            <div className="factory-image-box">
+            <div className="factory-image-box" data-animation="slide-left">
               <img src={infra1} alt={t("infrastructure.factory.images_alt")} />
             </div>
-            <div className="factory-image-box">
+            <div className="factory-image-box" data-animation="fade">
               <img src={infra2} alt={t("infrastructure.factory.images_alt")} />
             </div>
-            <div className="factory-image-box">
+            <div className="factory-image-box" data-animation="slide-right">
               <img src={infra3} alt={t("infrastructure.factory.images_alt")} />
             </div>
           </div>
           <div className="factory-row-2">
-            <div className="factory-image-box-wide">
+            <div className="factory-image-box-wide" data-animation="slide-left">
               <img src={infra4} alt={t("infrastructure.factory.images_alt")} />
             </div>
-            <div className="factory-image-box-wide">
+            <div className="factory-image-box-wide" data-animation="slide-right">
               <img src={infra5} alt={t("infrastructure.factory.images_alt")} />
             </div>
           </div>
@@ -82,18 +87,18 @@ function Infrastructure() {
 
         <div className="painting-images-grid">
           <div className="painting-row">
-            <div className="painting-image-box">
+            <div className="painting-image-box" data-animation="slide-left">
               <img src={paint1} alt={t("infrastructure.painting.image_alt")} />
             </div>
-            <div className="painting-image-box">
+            <div className="painting-image-box" data-animation="slide-right">
               <img src={paint2} alt={t("infrastructure.painting.image_alt")} />
             </div>
           </div>
           <div className="painting-row">
-            <div className="painting-image-box">
+            <div className="painting-image-box" data-animation="slide-left">
               <img src={paint3} alt={t("infrastructure.painting.image_alt")} />
             </div>
-            <div className="painting-image-box">
+            <div className="painting-image-box" data-animation="slide-right">
               <img src={paint4} alt={t("infrastructure.painting.image_alt")} />
             </div>
           </div>

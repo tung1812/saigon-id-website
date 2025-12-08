@@ -1,12 +1,13 @@
 .infrastructure-page {
-  min-height: 100vh;
+  min-height: auto;
   background: #0D0D0D;
   position: relative;
   overflow-x: hidden;
+  padding-top: clamp(100px, 15vh, 180px);
 }
 
-.infrastructure-page .bg-a{ top: -100px; opacity: 0.15;}
-.infrastructure-page .bg-b{ top: 1600px; opacity: 0.15;}
+.infrastructure-page .bg-a{ --y: -100px; --opacity: .15; }
+.infrastructure-page .bg-b{ --y: 1600px; --opacity: .15; }
 
 .factory-production-section {
   position: relative;

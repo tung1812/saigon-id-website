@@ -240,6 +240,7 @@
     "logo_alt": "SAIGON ID Logo"
   },
   "nav": {
+    "home": "HOME",
     "home_aria": "Go to home",
     "about": "ABOUT US",
     "projects": "PROJECTS",

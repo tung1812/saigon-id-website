@@ -5,11 +5,13 @@ import Projects from './pages/Projects'
 import ProjectDetail from './pages/ProjectDetail'
 import Furniture from './pages/Furniture'
 import Infrastructure from './pages/Infrastructure'
+import ScrollToTop from './components/ScrollToTop'
 import './App.css'
 
 function App() {
   return (
     <Router basename={import.meta.env.BASE_URL}>
+      <ScrollToTop /> 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

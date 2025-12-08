@@ -83,11 +83,11 @@ export default function ContactFooter() {
           <div className="contact-row">
             <div className="contact-item col1">
               <span className="contact-label">Email</span>
-              <p className="contact-text">contact.saigonid@gmail.com</p>
+              <p className="contact-text">-info@saigonid.com.vn</p>
             </div>
             <div className="contact-item middle-collumn col2">
-              <span className="contact-label">Email</span>
-              <p className="contact-text">contact.saigonid@gmail.com</p>
+              {/* <span className="contact-label">Email</span>
+              <p className="contact-text"></p> */}
             </div>
             <div className="contact-icon col3"><img src={mail} alt="" /></div>
           </div>

@@ -1,3 +1,6 @@
+/* Import animations */
+@import './styles/animations.css';
+
 /* Global Reset and Base Styles */
 * {
   margin: 0;
@@ -27,13 +30,13 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  min-height: 100vh;
   background: #0D0D0D;
 }
 
 #root {
   width: 100%;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {

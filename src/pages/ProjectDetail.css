@@ -3,12 +3,13 @@
   background: var(--color-bg-dark);
   color: var(--color-white);
   position: relative;
-  min-height: 100vh;
+  min-height: auto;
   overflow-x: hidden;
+  padding-top: clamp(100px, 15vh, 180px);
 }
 
 /* ===== Decorative Background ===== */
-.project-detail-page .bg-a {top: 150px;}
+.project-detail-page .bg-a{ --y: 150px; --opacity: .15; }
 
 /* ===== Project Detail Section ===== */
 .project-detail-section {
@@ -46,11 +47,30 @@
   aspect-ratio: 769 / 552;
 }
 
+.main-image-btn {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 1;
+  transition: opacity 0.2s;
+}
+
+.main-image-btn:hover {
+  opacity: 0.9;
+}
+
 .main-gallery-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  pointer-events: none;
 }
 
 .gallery-nav-btn {
@@ -334,7 +354,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 1000001;
   backdrop-filter: blur(4px);
 }
 

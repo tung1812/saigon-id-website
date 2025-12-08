@@ -1,6 +1,7 @@
 // src/pages/Projects.jsx
 import { Link } from 'react-router-dom'
 import './Projects.css'
+import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import Header from "../components/Header";
 import ContactFooter from "../components/ContactFooter";
 import BackToTopButton from '../components/BackToTopButton'
@@ -19,20 +20,24 @@ import bg from '../assets/img/Bg/bg.png'
 
 function Projects() {
   const { t } = useTranslation();
+  useScrollAnimation();
 
   return (
     <div className="projects-page">
-      <div className="bg-layer bg-a" aria-hidden="true">
-        <img src={bg} alt={t("projects.alts.bg")} loading="lazy" />
+      <div className="bg-shelf" aria-hidden="true">
+        <div className="bg-layer bg-a" aria-hidden="true">
+          <img src={bg} alt={t("projects.alts.bg")} loading="lazy" />
+        </div>
       </div>
+
 
       <Header />
 
       <section className="all-projects-section">
-        <div className="projects-container">
+        <div className="projects-container stagger-animation">
           {/* Row 1 */}
           <div className="projects-row">
-            <Link to="/projects/balisa-hotel" className="project-card">
+            <Link to="/projects/balisa-hotel" className="project-card" data-animation="slide-left">
               <img
                 src={balisaHotelImg}
                 alt={t("projects.alts.balisa_hotel")}
@@ -41,7 +46,7 @@ function Projects() {
               <h3 className="project-title">{t("projects.grid.balisa_hotel")}</h3>
             </Link>
 
-            <Link to="/projects/penthouse-mr-quang" className="project-card">
+            <Link to="/projects/penthouse-mr-quang" className="project-card" data-animation="fade">
               <img
                 src={penthouseMrQuangImg}
                 alt={t("projects.alts.penthouse_mr_quang")}
@@ -50,7 +55,7 @@ function Projects() {
               <h3 className="project-title">{t("projects.grid.penthouse_mr_quang")}</h3>
             </Link>
 
-            <Link to="/projects/chung-cu-estalla" className="project-card">
+            <Link to="/projects/chung-cu-estalla" className="project-card" data-animation="slide-right">
               <img
                 src={estellaThumb}
                 alt={t("projects.alts.estella_apartment")}
@@ -62,7 +67,7 @@ function Projects() {
 
           {/* Row 2 */}
           <div className="projects-row">
-            <Link to="/projects/apec-mandala" className="project-card">
+            <Link to="/projects/apec-mandala" className="project-card" data-animation="slide-left">
               <img
                 src={apacThumb}
                 alt={t("projects.alts.apec_mandala")}
@@ -71,7 +76,7 @@ function Projects() {
               <h3 className="project-title">{t("projects.grid.apec_mandala")}</h3>
             </Link>
 
-            <Link to="/projects/kien-long-bank" className="project-card">
+            <Link to="/projects/kien-long-bank" className="project-card" data-animation="fade">
               <img
                 src={kienLongThumb}
                 alt={t("projects.alts.kien_long_bank")}
@@ -80,7 +85,7 @@ function Projects() {
               <h3 className="project-title">{t("projects.grid.kien_long_bank")}</h3>
             </Link>
 
-            <Link to="/projects/pizza-4ps" className="project-card">
+            <Link to="/projects/pizza-4ps" className="project-card" data-animation="slide-right">
               <img
                 src={pizzaThumb}
                 alt={t("projects.alts.pizza_4ps")}
@@ -92,7 +97,7 @@ function Projects() {
 
           {/* Row 3 */}
           <div className="projects-row">
-            <Link to="/projects/coffee-shop" className="project-card">
+            <Link to="/projects/coffee-shop" className="project-card" data-animation="slide-left">
               <img
                 src={coffeeThumb}
                 alt={t("projects.alts.coffee_shop")}
@@ -101,7 +106,7 @@ function Projects() {
               <h3 className="project-title">{t("projects.grid.coffee_shop")}</h3>
             </Link>
 
-            <Link to="/projects/penthouse-masteri" className="project-card">
+            <Link to="/projects/penthouse-masteri" className="project-card" data-animation="fade">
               <img
                 src={penthouseMasteriThumb}
                 alt={t("projects.alts.penthouse_masteri")}
@@ -110,7 +115,7 @@ function Projects() {
               <h3 className="project-title">{t("projects.grid.penthouse_masteri")}</h3>
             </Link>
 
-            <Link to="/projects/phuc-long-coffee" className="project-card">
+            <Link to="/projects/phuc-long-coffee" className="project-card" data-animation="slide-right">
               <img
                 src={phucLongThumb}
                 alt={t("projects.alts.phuc_long_coffee")}
