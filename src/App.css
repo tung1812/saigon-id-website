@@ -1288,4 +1288,52 @@
     /* Or, if using aspect-ratio above, you can shorten further: */
     /* aspect-ratio: 4 / 3; */
   }
+
+    /* Put badge and title on separate rows to avoid overlap */
+  .services-header-grid,
+  .projects-header-grid {
+    grid-template-columns: 1fr;      /* 1 column */
+    grid-template-rows: auto auto;   /* badge row, title row */
+    row-gap: .75rem;
+  }
+
+
+
+  /* Make the badge more compact so its border looks correct */
+  .section-badge {
+    font-size: clamp(.875rem, 3.8vw, 1rem);
+    padding: .5rem .7rem;
+    border-radius: 12px;
+    border-width: 1px;               /* thinner border reads better small */
+    line-height: 1.1;
+    box-sizing: border-box;
+  }
+
+  /* Slightly reduce the big title and vertical gaps */
+  .projects-title .line1,
+  .projects-title .line2 {
+    font-size: clamp(1.75rem, 11vw, 2.75rem);
+    letter-spacing: -2px;             /* scale tracking with size */
+  }
+  .services-title .line1,
+  .projects-title .line1 { padding-bottom: 4px; }
+  .services-title .line2,
+  .projects-title .line2 { padding-top: 4px; }
+
+  /* (Already handled at 871px) but reiterate: no sideways shifts on tiny screens */
+  .services-title .line1,
+  .services-title .line2,
+  .projects-title .line1,
+  .projects-title .line2 {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 375px) {
+
+  .services-title .line1,
+  .services-title .line2 {
+    font-size: clamp(1.75rem, 11vw, 2.75rem);
+    letter-spacing: -2px;             /* scale tracking with size */
+  }
 }

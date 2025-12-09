@@ -12,8 +12,6 @@ import bg from '../assets/img/Bg/bg.png'
 import bg1 from '../assets/img/Bg/bg1.png'
 import bg2 from '../assets/img/Bg/bg2.png'
 
-import logoNgang from '../assets/img/Logo/logo ngang.png'
-import logoDoc from '../assets/img/logo/logoDoc.png'
 import hero1 from '../assets/img/Home/Hero/1.png'
 import hero2 from '../assets/img/Home/Hero/2.png'
 import hero3 from '../assets/img/Home/Hero/3.png'
@@ -23,12 +21,14 @@ import nhamaygo from '../assets/img/Home/nha may go.jpg'
 import thietke from '../assets/img/Home/thiet ke.jpg'
 import thicong from '../assets/img/Home/thi cong.jpg'
 import nhahang from '../assets/img/Home/nha hang.jpg'
-import home1 from '../assets/img/Home/1.png'
-import home2 from '../assets/img/Home/2.png'
-import home3 from '../assets/img/Home/3.png'
-import home4 from '../assets/img/Home/4.png'
-import home5 from '../assets/img/Home/5.png'
 import chebiengo from '../assets/img/Home/che bien go.jpg'
+
+import balisaHotelImg from '../assets/img/Home/Hotel.png'
+import penthouseMrQuangImg from '../assets/img/Home/mrquang.png'
+import estellaThumb from '../assets/img/Home/estella.jpg'
+import kienLongThumb from '../assets/img/Home/kienlong.png'
+import pizzaThumb from '../assets/img/Home/4ps.jpg'
+
 
 import ancuong from '../assets/img/Logo/an cuong.png'
 import dupont from '../assets/img/Logo/du pont.png'
@@ -255,7 +255,7 @@ function Home() {
 
       {/* Projects Section */}
       <section className="projects-section" id="projects">
-        <div class="projects-inner">
+        <div className="projects-inner">
           <div className="projects-header">
             <div className="projects-header-grid">
               <div className="section-badge projects-badge" data-animation="fade">{t("home.projects.badge")}</div>
@@ -276,54 +276,56 @@ function Home() {
         <div className="projects-grid stagger-animation">
           {/* Row 1 */}
           <div className="projects-row row-1">
-            <div className="home-project-card large" data-animation="slide-left">
+            <Link to="/projects/balisa-hotel" className="home-project-card large" data-animation="slide-left">
               <div className="project-card-wrapper">
-                <div className='project-media'>
-                  <img src={home2} alt={t("home.projects.cards.eximbank")} />
+                <div className="project-media">
+                  <img src={balisaHotelImg} alt={t("projects.alts.balisa_hotel")} />
                 </div>
-                <h3 className="home-project-title">{t("home.projects.cards.eximbank")}</h3>
+                <h3 className="home-project-title">{t("projects.grid.balisa_hotel")}</h3>
               </div>
-            </div>
-            <div className="home-project-card small" data-animation="slide-right">
+            </Link>
+
+            <Link to="/projects/penthouse-mr-quang" className="home-project-card small" data-animation="slide-right">
               <div className="project-card-wrapper">
-                <div className='project-media'>
-                  <img src={home1} alt={t("home.projects.cards.ksf")} />
+                <div className="project-media">
+                  <img src={penthouseMrQuangImg} alt={t("projects.alts.penthouse_mr_quang")} />
                 </div>
-                <h3 className="home-project-title">{t("home.projects.cards.ksf")}</h3>
+                <h3 className="home-project-title">{t("projects.grid.penthouse_mr_quang")}</h3>
               </div>
-            </div>
+            </Link>
           </div>
 
           {/* Row 2 */}
           <div className="projects-row row-2 center">
-            <div className="home-project-card large" data-animation="fade">
+            <Link to="/projects/chung-cu-estalla" className="home-project-card large" data-animation="fade">
               <div className="project-card-wrapper">
-                <div className='project-media'>
-                  <img src={home3} alt={t("home.projects.cards.penthouse_quang")} />
+                <div className="project-media">
+                  <img src={estellaThumb} alt={t("projects.alts.estella_apartment")} />
                 </div>
-                <h3 className="home-project-title">{t("home.projects.cards.penthouse_quang")}</h3>
+                <h3 className="home-project-title">{t("projects.grid.estella_apartment")}</h3>
               </div>
-            </div>
+            </Link>
           </div>
 
           {/* Row 3 */}
           <div className="projects-row row-3">
-            <div className="home-project-card small" data-animation="slide-left">
+            <Link to="/projects/kien-long-bank" className="home-project-card small" data-animation="slide-left">
               <div className="project-card-wrapper">
-                <div className='project-media'>
-                  <img src={home5} alt={t("home.projects.cards.townhouse")} />
+                <div className="project-media">
+                  <img src={kienLongThumb} alt={t("projects.alts.kien_long_bank")} />
                 </div>
-                <h3 className="home-project-title">{t("home.projects.cards.townhouse")}</h3>
+                <h3 className="home-project-title">{t("projects.grid.kien_long_bank")}</h3>
               </div>
-            </div>
-            <div className="home-project-card large" data-animation="slide-right">
+            </Link>
+
+            <Link to="/projects/pizza-4ps" className="home-project-card large" data-animation="slide-right">
               <div className="project-card-wrapper">
-                <div className='project-media'>
-                  <img src={home4} alt={t("home.projects.cards.phuclong")} />
+                <div className="project-media">
+                  <img src={pizzaThumb} alt={t("projects.alts.pizza_4ps")} />
                 </div>
-                <h3 className="home-project-title">{t("home.projects.cards.phuclong")}</h3>
+                <h3 className="home-project-title">{t("projects.grid.pizza_4ps")}</h3>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
