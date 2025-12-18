@@ -25,6 +25,8 @@
 .logo-link { display: inline-block; }
 .logo { cursor: pointer; }
 
+
+
 /* ===== Global Resets ===== */
 * {
   margin: 0;
@@ -1034,6 +1036,18 @@
 .social-icons img {
   height: 40px;
   width: 40px;
+}
+
+.nav-menu a.nav-link {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.nav-menu a.nav-link.is-active {
+  color: var(--color-brown);            /* #8D5028 */
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
 }
 
 /* ===== Responsive Breakpoints ===== */

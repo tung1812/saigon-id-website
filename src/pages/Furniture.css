@@ -1,3 +1,7 @@
+:root{
+  --gallery-gap: clamp(1.5rem, 3vw, 2.0rem);
+}
+
 .furniture-page {
   min-height: auto;
   background: #0D0D0D;
@@ -83,8 +87,10 @@
 }
 
 .gallery-slider {
-  display: flex;
-  gap: clamp(1.5rem, 3vw, 2.8rem);
+  display: grid;
+  grid-auto-flow: column;                            /* horizontal flow */
+  gap: var(--gallery-gap);
+  grid-auto-columns: calc((100% - 2*var(--gallery-gap)) / 3); /* 3 cols */
   overflow-x: auto;
   scroll-behavior: smooth;
   flex: 1;
@@ -113,11 +119,11 @@
 
 .gallery-item {
   flex-shrink: 0;
-  width: clamp(280px, 22vw, 340px);
+  width: auto;                     /* let grid column width control it */
   background: #191919;
   border-radius: 22px;
   padding: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform .3s ease, box-shadow .3s ease;
   scroll-snap-align: start;
   border: none;
   cursor: pointer;
@@ -365,6 +371,12 @@
   display: block;
 }
 
+@media (max-width: 1024px){
+  .gallery-slider{
+    grid-auto-columns: calc((100% - var(--gallery-gap)) / 2);
+  }
+}
+
 @media (max-width: 768px) {
   .top-bar-furniture .nav-menu {
     display: none;
@@ -405,4 +417,11 @@
   .modal-close-btn {
     top: -2.5rem;
   }
+  .gallery-slider{
+    grid-auto-columns: 85%;   
+  }
+  .gallery-item{
+    width: auto; /* keep auto; the column width above governs the size */
+  }
+  
 }

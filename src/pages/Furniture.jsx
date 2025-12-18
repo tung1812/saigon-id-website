@@ -26,44 +26,69 @@ function Furniture() {
     })
   )
 
-  const sliderRef = useRef(null)
-  const [canScrollLeft, setCanScrollLeft] = useState(false)
-  const [canScrollRight, setCanScrollRight] = useState(true)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [modalImageIndex, setModalImageIndex] = useState(0)
+  const mid = Math.ceil(furnitureImages.length / 2);
+  const row1 = furnitureImages.slice(0, mid);
+  const row2 = furnitureImages.slice(mid);
 
-  const checkScroll = () => {
-    if (sliderRef.current) {
-      setCanScrollLeft(sliderRef.current.scrollLeft > 0)
-      setCanScrollRight(
-        sliderRef.current.scrollLeft <
-        sliderRef.current.scrollWidth - sliderRef.current.clientWidth - 10
-      )
-    }
-  }
+  // Two sliders, two scroll states
+  const sliderRefs = [useRef(null), useRef(null)];
+  const [scrollState, setScrollState] = useState([
+    { left: false, right: true },
+    { left: false, right: true },
+  ]);
 
-  const scroll = (direction) => {
-    if (sliderRef.current) {
-      const scrollAmount = 320
-      sliderRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
-      })
-      setTimeout(checkScroll, 500)
-    }
-  }
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalImageIndex, setModalImageIndex] = useState(0);
+
+  const checkScrollFor = (row) => {
+    const el = sliderRefs[row]?.current;
+    if (!el) return;
+    setScrollState((prev) => {
+      const next = [...prev];
+      next[row] = {
+        left: el.scrollLeft > 0,
+        right: el.scrollLeft < el.scrollWidth - el.clientWidth - 10,
+      };
+      return next;
+    });
+  };
+
+  // helper to compute one “column” width (card + gap), per row
+  const getScrollAmount = (row) => {
+    const track = sliderRefs[row]?.current;
+    if (!track) return 320;
+    const first = track.querySelector('.gallery-item');
+    const styles = getComputedStyle(track);
+    const gap = parseFloat(styles.columnGap || styles.gap || '0') || 0;
+    return (first?.offsetWidth || 320) + gap;
+  };
+
+  const scroll = (row, direction) => {
+    const track = sliderRefs[row]?.current;
+    if (!track) return;
+    const by = getScrollAmount(row);
+    track.scrollBy({
+      left: direction === 'left' ? -by : by,
+      behavior: 'smooth',
+    });
+    setTimeout(() => checkScrollFor(row), 400);
+  };
 
   useEffect(() => {
-    checkScroll()
-    window.addEventListener('resize', checkScroll)
-    return () => window.removeEventListener('resize', checkScroll)
-  }, [])
+    // Initialize both rows & on resize
+    const handle = () => {
+      checkScrollFor(0);
+      checkScrollFor(1);
+    };
+    handle();
+    window.addEventListener('resize', handle);
+    return () => window.removeEventListener('resize', handle);
+  }, []);
 
   useEffect(() => {
     if (!isModalOpen) return;
 
     const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
-
     const { style } = document.body;
     const prevOverflow = style.overflow;
     const prevPaddingRight = style.paddingRight;
@@ -77,22 +102,15 @@ function Furniture() {
     };
   }, [isModalOpen]);
 
-  const openModal = (imageIndex) => {
-    setModalImageIndex(Number(imageIndex) || 0)
-    setIsModalOpen(true)
-  }
-
-  const closeModal = () => {
-    setIsModalOpen(false)
-  }
-
-  const handleModalPrevImage = () => {
-    setModalImageIndex((prev) => (prev === 0 ? furnitureImages.length - 1 : prev - 1))
-  }
-
-  const handleModalNextImage = () => {
-    setModalImageIndex((prev) => (prev === furnitureImages.length - 1 ? 0 : prev + 1))
-  }
+  const openModal = (globalIndex) => {
+    setModalImageIndex(Number(globalIndex) || 0);
+    setIsModalOpen(true);
+  };
+  const closeModal = () => setIsModalOpen(false);
+  const handleModalPrevImage = () =>
+    setModalImageIndex((p) => (p === 0 ? furnitureImages.length - 1 : p - 1));
+  const handleModalNextImage = () =>
+    setModalImageIndex((p) => (p === furnitureImages.length - 1 ? 0 : p + 1));
 
   return (
     <div className="furniture-page">
@@ -124,38 +142,98 @@ function Furniture() {
       </section>
 
       <section className="furniture-gallery">
-        <div className="gallery-slider-container">
+        {/* ROW 1 */}
+        <div className="gallery-slider-container" aria-label="Top furniture row">
           <button
-            className={`slider-nav-btn slider-nav-prev ${!canScrollLeft ? 'disabled' : ''}`}
-            onClick={() => scroll('left')}
-            aria-label={t("furniture.gallery.a11y.scroll_left")}
-            disabled={!canScrollLeft}
+            className={`slider-nav-btn slider-nav-prev ${!scrollState[0].left ? 'disabled' : ''}`}
+            onClick={() => scroll(0, 'left')}
+            aria-label={t('furniture.gallery.a11y.scroll_left')}
+            disabled={!scrollState[0].left}
           >
-            {/* left chevron */}
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </button>
 
-          <div className="gallery-slider" ref={sliderRef} onScroll={checkScroll} onLoad={checkScroll}>
-            {furnitureImages.map((image, index) => (
-              <button
-                key={index}
-                className="gallery-item"
-                onClick={() => openModal(index)}
-                aria-label={`${t("furniture.gallery.a11y.item_alt_prefix")} ${index + 1}`}
-              >
-                <img src={image} alt={`${t("furniture.gallery.a11y.item_alt_prefix")} ${index + 1}`} />
-              </button>
-            ))}
+          <div
+            className="gallery-slider"
+            ref={sliderRefs[0]}
+            onScroll={() => checkScrollFor(0)}
+            onLoad={() => checkScrollFor(0)}
+          >
+            {row1.map((image, i) => {
+              const globalIndex = i; // row1 starts at 0
+              return (
+                <button
+                  key={`r1-${i}`}
+                  className="gallery-item"
+                  onClick={() => openModal(globalIndex)}
+                  aria-label={`${t('furniture.gallery.a11y.item_alt_prefix')} ${globalIndex + 1}`}
+                >
+                  <img src={image} alt={`${t('furniture.gallery.a11y.item_alt_prefix')} ${globalIndex + 1}`} />
+                </button>
+              );
+            })}
           </div>
 
           <button
-            className={`slider-nav-btn slider-nav-next ${!canScrollRight ? 'disabled' : ''}`}
-            onClick={() => scroll('right')}
-            aria-label={t("furniture.gallery.a11y.scroll_right")}
-            disabled={!canScrollRight}
+            className={`slider-nav-btn slider-nav-next ${!scrollState[0].right ? 'disabled' : ''}`}
+            onClick={() => scroll(0, 'right')}
+            aria-label={t('furniture.gallery.a11y.scroll_right')}
+            disabled={!scrollState[0].right}
           >
-            {/* right chevron */}
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        </div>
+
+        {/* spacing between rows */}
+        <div style={{ height: '1.25rem' }} />
+
+        {/* ROW 2 */}
+        <div className="gallery-slider-container" aria-label="Bottom furniture row">
+          <button
+            className={`slider-nav-btn slider-nav-prev ${!scrollState[1].left ? 'disabled' : ''}`}
+            onClick={() => scroll(1, 'left')}
+            aria-label={t('furniture.gallery.a11y.scroll_left')}
+            disabled={!scrollState[1].left}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+
+          <div
+            className="gallery-slider"
+            ref={sliderRefs[1]}
+            onScroll={() => checkScrollFor(1)}
+            onLoad={() => checkScrollFor(1)}
+          >
+            {row2.map((image, i) => {
+              const globalIndex = mid + i; // row2 starts after row1
+              return (
+                <button
+                  key={`r2-${i}`}
+                  className="gallery-item"
+                  onClick={() => openModal(globalIndex)}
+                  aria-label={`${t('furniture.gallery.a11y.item_alt_prefix')} ${globalIndex + 1}`}
+                >
+                  <img src={image} alt={`${t('furniture.gallery.a11y.item_alt_prefix')} ${globalIndex + 1}`} />
+                </button>
+              );
+            })}
+          </div>
+
+          <button
+            className={`slider-nav-btn slider-nav-next ${!scrollState[1].right ? 'disabled' : ''}`}
+            onClick={() => scroll(1, 'right')}
+            aria-label={t('furniture.gallery.a11y.scroll_right')}
+            disabled={!scrollState[1].right}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </button>
         </div>
       </section>

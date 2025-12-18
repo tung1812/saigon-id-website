@@ -1,6 +1,6 @@
 // src/components/Header.jsx
 import { useState, useLayoutEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import FadeOnLangChange from "./FadeOnLangChange";
 
@@ -47,49 +47,54 @@ export default function Header() {
         <FadeOnLangChange>
           <ul className={`nav-menu ${isMenuOpen ? "mobile-menu-open" : ""}`}>
             <li>
-              <Link
+              <NavLink
                 to="/"
+                end                           
                 onClick={closeMenu}
-                aria-current={pathname === "/" ? "page" : undefined}
+                className={({ isActive }) => `nav-link ${isActive ? "is-active" : ""}`}
               >
                 {t("nav.home")}
-              </Link>
+              </NavLink>
             </li>
+
             <li>
-              <Link
+              <NavLink
                 to="/about"
                 onClick={closeMenu}
-                aria-current={pathname === "/about" ? "page" : undefined}
+                className={({ isActive }) => `nav-link ${isActive ? "is-active" : ""}`}
               >
                 {t("nav.about")}
-              </Link>
+              </NavLink>
             </li>
+
             <li>
-              <Link
-                to="/projects"
+              <NavLink
+                to="/projects"                
                 onClick={closeMenu}
-                aria-current={pathname === "/projects" ? "page" : undefined}
+                className={({ isActive }) => `nav-link ${isActive ? "is-active" : ""}`}
               >
                 {t("nav.projects")}
-              </Link>
+              </NavLink>
             </li>
+
             <li>
-              <Link
+              <NavLink
                 to="/furniture"
                 onClick={closeMenu}
-                aria-current={pathname === "/furniture" ? "page" : undefined}
+                className={({ isActive }) => `nav-link ${isActive ? "is-active" : ""}`}
               >
                 {t("nav.furniture")}
-              </Link>
+              </NavLink>
             </li>
+
             <li>
-              <Link
+              <NavLink
                 to="/infrastructure"
                 onClick={closeMenu}
-                aria-current={pathname === "/infrastructure" ? "page" : undefined}
+                className={({ isActive }) => `nav-link ${isActive ? "is-active" : ""}`}
               >
                 {t("nav.infrastructure")}
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </FadeOnLangChange>
