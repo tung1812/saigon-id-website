@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://saigonid.com.vn/sitemap.xml
