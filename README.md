@@ -1,6 +1,6 @@
 # Saigon ID — Interior Design Portfolio Website
 
-A responsive, bilingual portfolio website presenting an interior design and construction business, its services, facilities, and completed projects.
+A responsive, bilingual portfolio website developed as a **freelance project** for an interior design and construction business, presenting its services, facilities, and completed projects.
 
 **Live website:** [saigonid.com.vn](https://saigonid.com.vn/)  
 **Repository:** [tung1812/saigon-id-website](https://github.com/tung1812/saigon-id-website)
@@ -8,6 +8,15 @@ A responsive, bilingual portfolio website presenting an interior design and cons
 ## Overview
 
 This React application organizes the company's work into a visual portfolio. Visitors can explore featured interior projects, browse image galleries, learn about the business and its facilities, and find contact information. The interface supports Vietnamese and English.
+
+## My role
+
+I worked on this freelance project in a two-person collaboration:
+
+- **My role — Web developer:** Implemented the website using React and associated frontend technologies, including its pages, navigation, galleries, and bilingual interface.
+- **Collaborator's role — Designer:** Created the visual design that guided the website's implementation.
+
+The project gave me experience translating a collaborator's designs into a working, client-facing website.
 
 ## Features
 
@@ -79,4 +88,4 @@ src/
 
 ---
 
-*This README describes functionality visible in the repository. Individual development responsibilities can be added once the project roles are confirmed.*
+*Built as a freelance collaboration between a designer and developer.*
